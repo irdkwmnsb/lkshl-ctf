@@ -1,0 +1,396 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #555;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+.navbar .navbar-brand {
+    padding-top: 24px;
+}
+
+.navbar .divider-vertical {
+    height: 70px;
+    margin: 0 9px;
+    border-right: 1px solid #ffffff;
+    border-left: 1px solid rgba(99, 192, 255, 0.51);
+}
+
+@media (max-width: 767px) {
+    .navbar-collapse .nav > .divider-vertical {
+        display: none;
+     }
+}
+
+.footer {
+    width: 100%;
+    background-color: #454545;
+    margin-top: 50px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.footer div,
+.footer h2 {
+    color: white;
+}
+
+hr {
+    border: none;
+    color: rgba(159, 159, 159, 0.5);
+    background-color: rgba(159, 159, 159, 0.5);
+    height: 1px;
+}
+
+table thead strong,
+table thead th {
+    font-weight: 500;
+}
+
+.one-line {
+    white-space: nowrap;
+}
+
+.ellipsis {
+    text-overflow: ellipsis;
+}
+
+.hline-white {
+    border-bottom: 2px solid #ffffff;
+    margin-bottom: 25px;
+}
+
+.label-sm {
+    font-size: 12px;
+}
+
+.label-primary {
+    /* background-color: #62627A; */
+}
+
+.label-disabled {
+    background-color: #7B7B7B;
+}
+
+.modal-body {
+    padding: 20px 40px;
+}
+
+.modal-header {
+    outline: 0;
+}
+
+.alert {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.label-md {
+    font-size: 16px;
+}
+
+.label-lg {
+    font-size: 20px;
+}
+
+.va-middle {
+    vertical-align: middle;
+}
+
+.va-top {
+    vertical-align: top;
+}
+
+.ib {
+    display: inline-block;
+}
+
+.mt0 {
+    margin-top: 0;
+}
+
+.pl40 {
+    padding-left: 40px;
+}
+
+.fw300 {
+    font-weight: 300;
+}
+
+.fw400 {
+    font-weight: 400;
+}
+
+.fs12 {
+    font-size: 12pt;
+}
+
+.fs14 {
+    font-size: 14pt;
+}
+
+.ml5 {
+    margin-left: 5px;
+}
+
+.ml10 {
+    margin-left: 10px;
+}
+
+.form-control-short,
+.input-group .form-control-short,
+.form-inline .form-control-short,
+.input-group /* Dangerous! Be careful, it's redefining width for all input-groups, use only in pair with .form-control-short */ {
+    width: 350px;
+}
+
+.btn-inline {
+    border-radius: 4px;
+}
+
+.text-muted {
+    color: #aaa;
+    font-weight: 200;
+}
+
+.form-control-small {
+    height: 29px;
+}
+
+form label {
+    font-weight: 500;
+}
+
+.messages {
+    position: absolute;
+    right: 10px;
+    min-width: 400px;
+}
+
+.has-error .checkbox-inline,
+.has-error .control-label,
+.has-error .radio,
+.has-error .radio-inline,
+.has-error.checkbox label,
+.has-error.checkbox-inline label,
+.has-error.radio label,
+.has-error.radio-inline label {
+    font-size: inherit;
+    font-weight: 700;
+}
+
+.form-control.file-caption.kv-fileinput-caption {
+    height: 28px;
+}
+
+.visible-on-parent-hover {
+    display: none;
+}
+
+*:hover > .visible-on-parent-hover {
+    display: inline-block;
+}
+
+.page {
+    background-color: white;
+    padding: 30px;
+    border-left: 2px solid #e6e6e6;
+}
+
+h1.page__header {
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.contest-header + .page__header {
+    margin-top: 30px;
+}
+
+/* Navbar */
+.dropdown-menu > li > a.text-danger,
+.navbar-default .navbar-nav .open .dropdown-menu>li>.text-danger {
+    color: #a94442;
+}
+
+@media (min-width: 768px) {
+    .dropdown .dropdown-menu {
+        display: none;
+    }
+}
+
+/* Contest header */
+.contest-header {
+    color: white;
+    background-color: #006D5C;
+    margin: -30px -30px 0;
+    padding: 20px 20px 15px 15px;
+}
+
+.contest-header .contest__title {
+    color: white;
+}
+
+.contest-header a:not(.btn) {
+    color: white;
+    text-decoration: underline;
+}
+
+.contest-header a:not(.btn):hover {
+    color: #4c2c56;
+    transition-duration: 0.1s;
+}
+
+/* Contests page */
+.contests-list__contest {
+    background-color: #fefefe;
+    border-left: 2px solid #eaeaea;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.contests-list__contest h1 {
+    height: 40px;
+}
+
+.contest-info__name {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+}
+
+/* Contest page */
+.contest-page .contest__title {
+    margin-top: 0;
+}
+
+.contest-page .contest__status {
+    vertical-align: middle;
+    font-weight: normal;
+    background-color: white;
+    color: #62627A;
+
+    position: relative;
+    top: -4px;
+}
+
+.contest__news {
+    border-top: 1px solid #ccc;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.contest__add-news {
+    display: inline-block;
+    width: 100%;
+    background-color: #eee;
+    padding: 10pt 20px;
+    font-size: 14pt;
+    color: #333;
+    margin-top: 20px;
+}
+
+.contest__add-news:hover {
+    background-color: #ddd;
+    text-decoration: none;
+    color: #333;
+}
+
+/* Profile page */
+.user-page .user-username {
+    font-size: 20pt;
+}
+
+.user-page .user-name {
+    font-size: 13pt;
+}
+
+.user-page .user-username .label {
+    vertical-align: middle;
+    font-size: 10px;
+}
+
+/* Tasks page */
+.categories-list .category {
+    margin: 0 0 30px;
+}
+
+.category .category-info {
+    background-color: #006D5C;
+    color: white;
+}
+
+.category .category-info * {
+    color: white;
+}
+
+.category .add-category {
+    text-align: center;
+    border: 2px dashed #999;
+    cursor: pointer;
+    padding: 10px 20px 20px;
+}
+
+.category .add-category h3 {
+    color: #999;
+    font-weight: 400;
+}
+
+.category .category__task {
+
+}
+
+.category .category__task .task__max_score,
+.task .task__max_score {
+    position: relative;
+    top: -5px;
+    margin-right: 5px;
+}
+
+.category .category__task .task__name,
+.task .task__name {
+    font-weight: 300;
+}
+
+.category .category__task .task__link,
+.task .task__link{
+    font-size: 16pt;
+}
+
+.add-task {
+    text-align: left;
+    cursor: pointer;
+    color: #999;
+    font-weight: 300;
+}
+
+/* Task page */
+.attempt-form #id_answer {
+    width: 300px;
+}
+
+/* Attempts page */
+.attempts .attempt-status a,
+.attempts .attempt-status a:hover {
+    text-decoration: none;
+}
+
+.attempts .attempt-status .glyphicon {
+    font-size: 80%;
+}
+
+.attempts .attempt-status a > div > .attempt-status__text {
+    text-decoration: underline;
+}
+
+.attempts .attempt-status a:hover > div {
+    opacity: 0.8;
+}

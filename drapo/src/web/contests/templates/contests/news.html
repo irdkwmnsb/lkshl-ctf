@@ -1,0 +1,34 @@
+{% extends '_layout.html' %}
+
+{% load markdown_deux_tags %}
+{% load humanize %}
+{% load urlize_html %}
+
+{% block title %}{{ news.title }} &bull; {{ contest.name }}{% endblock %}
+
+{% block content %}
+    <div class="page contest-page">
+        {% include 'contests/_contest_header.html' with contest=contest %}
+
+        <h1 class="page__header">
+            {{ news.title }}
+            {% if user.is_staff %}
+                <small>
+                    <a href="{% url 'contests:edit_news' contest.id news.id %}" title="Edit news">
+                        <span class="glyphicon glyphicon-edit"></span>
+                    </a>
+                </small>
+            {% endif %}
+            <div class="text-xs-small fw300 text-muted">
+                <span title="{{ news.publish_time }}">{{ news.publish_time|naturaltime }}</span>
+                by
+                <a href="{% url 'users:profile' news.author_id %}">{{ news.author.username }}</a>
+                {% if not news.is_published %}
+                    (not published)
+                {% endif %}
+            </div>
+        </h1>
+
+        {{ news.text|markdown|urlize_html }}
+    </div>
+{% endblock %}

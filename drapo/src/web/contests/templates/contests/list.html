@@ -1,0 +1,49 @@
+{% extends '_layout.html' %}
+
+{% load markdown_deux_tags %}
+{% load i18n %}
+
+{% block content %}
+    <div class="contests-list">
+        <div class="row">
+            {% for contest in contests %}
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    <div class="contests-list__contest">
+                        <h1 class="mt0 ellipsis one-line">{{ forloop.revcounter }}. <a href="{{ contest.get_absolute_url }}">{{ contest.name }}</a></h1>
+                        <p class="text-xs-small">{{ contest.start_time }}–{{ contest.finish_time }}</p>
+                        {% if contest.description %}
+                            <p>{{ contest.short_description }}</p>
+                        {% endif %}
+
+                        <a href="{{ contest.get_absolute_url }}" class="btn btn-primary mt10">{% trans 'Enter' %}</a>
+
+                        {% if contest.is_started %}
+                            <a href="{% url 'contests:scoreboard' contest.id %}" class="btn btn-link mt10">{% trans 'Scoreboard' %}</a>
+                        {% endif %}
+
+                        {% if user.authenticated %}
+                            <div>
+                                {% if contest.is_current_user_participating %}
+                                    {% trans 'You are participating' %}
+                                {% else %}
+                                    <a href="{% url 'contest:register' contest.id %}" class="btn btn-success mt10">{% trans 'Register for participation' %}</a>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+
+                    </div>
+                </div>
+
+                {% if forloop.counter|divisibleby:3 %}
+                    </div><div class="row">
+                {% endif %}
+            {% empty %}
+                <div class="col-xs-12">
+                    <div class="page">
+                        <h3 class="mt0 mb0 text-muted">{% trans 'No contests now, come later' %}</h3>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

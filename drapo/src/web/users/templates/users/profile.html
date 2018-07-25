@@ -1,0 +1,52 @@
+{% extends '_layout.html' %}
+
+{% load i18n %}
+
+{% block title %}{{ profile_user.get_full_name }}{% endblock %}
+
+{% block content %}
+    <div class="page user-page">
+        <div class="user-username">
+            {{ profile_user.username }}
+            {% if is_current_user %}
+                <a href="{% url 'users:edit' %}" class="text-xs-small">{% trans 'Edit your profile' %}</a>
+            {% endif %}
+        </div>
+        <div class="user-name">{{ profile_user.get_full_name }}</div>
+
+        <hr />
+
+        <h2>{% trans 'Teams' %}</h2>
+        {% if user_teams %}
+            {% spaceless %}
+                {% if is_current_user %}
+                    {% trans 'You are' %}
+                {% else %}
+                    <strong>{{ profile_user.username }}</strong> is
+                {% endif %}
+                {% trans 'member of' %}
+                {% if user_teams|length == 1 %}
+                    {% with team=user_teams|first %}
+                        <a href="{{ team.get_absolute_url }}">{{ team.name }}</a> {% trans 'team' %}
+                    {% endwith %}
+                {% else %}
+                    teams
+                    {% for team in user_teams %}<!--
+                        -->{% if not forloop.first and not forloop.last %},{% endif %}
+                        {% if forloop.last %}{% trans 'and' %}{% endif %}
+                        <a href="{{ team.get_absolute_url }}">{{ team.name }}</a>
+                    {% endfor %}
+                    <span>.</span>
+                {% endif %}
+            {% endspaceless %}
+        {% else %}
+            {% if is_current_user %}
+                {% trans "You are not any team's member" %}
+            {% else %}
+                <strong>{{ profile_user.username }}</strong> {% trans "is not any team's member" %}
+            {% endif %}
+        {% endif %}
+
+
+    </div>
+{% endblock %}

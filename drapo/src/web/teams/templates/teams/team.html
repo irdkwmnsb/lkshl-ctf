@@ -1,0 +1,79 @@
+{% extends '_layout.html' %}
+
+{% load i18n %}
+
+{% block title %}{{ team.name }}{% endblock %}
+
+{% block content %}
+    <div class="page team-page">
+        <h1 class="page__header text-nowrap ellipsis">
+            {{ team.name }}
+            {% if user in members %}
+                <span class="label label-success label-sm va-middle">{% trans 'Your team' %}</span>
+            {% endif %}
+
+            {% if can_edit %}
+                <div>
+                    <a href="{% url 'teams:edit' team.id %}" class="btn btn-primary">{% trans 'Edit team' %}</a>
+                </div>
+            {% endif %}
+        </h1>
+
+        {% if user in members %}
+            <div class="">
+                <span class="glyphicon glyphicon-bell" style="color: #d5c5c5"></span>
+                {% trans 'Invite users to your team, send them the link' %}
+                <a href="http{% if request.is_secure %}s{% endif %}://{{ request.get_host }}{{ team.get_invite_url }}">http{% if request.is_secure %}s{% endif %}://{{ request.get_host }}{{ team.get_invite_url }}</a>
+                {% trans 'or give them invite hash' %}: {{ team.invite_hash }}.
+
+                {% if team.captain == user %}
+                    {% trans "Captain can't leave the team." %}
+                {% else %}
+                    {% trans 'You can also' %} <a href="" class="post-link text-danger" data-url="{% url 'teams:leave' team.id %}">{% trans 'leave the team' %}</a>.
+                {% endif %}
+            </div>
+        {% endif %}
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <h3>{% trans 'Members' %}</h3>
+                {% for member in members %}
+                    <div>
+                        {{ forloop.counter }}.
+                        {% if team.captain == member %}
+                            <span class="glyphicon glyphicon-star text-danger" title="{% trans 'Captain' %}"></span>
+                        {% endif %}
+                        <a href="{{ member.get_absolute_url }}">{{ member.get_full_name }}</a>
+                        aka <strong>{{ member.username }}</strong>
+
+                        {% if member == user and team.captain != user %}
+                            <form action="{% url 'teams:leave' team.id %}" method="POST" class="ib visible-on-parent-hover">
+                                {% csrf_token %}
+                                <button class="btn btn-danger btn-xs btn-inline">{% trans 'Leave team' %}</button>
+                            </form>
+                        {% elif team.captain == user or user.is_staff %}
+                            {% if member != team.captain %}
+                                <form action="{% url 'teams:remove_member' team.id member.id %}" method="POST" class="ib visible-on-parent-hover">
+                                    {% csrf_token %}
+                                    <button class="btn btn-danger btn-xs btn-inline">{% trans 'Remove' %}</button>
+                                </form>
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                {% if contests %}
+                    <h3>{% trans 'Participated in' %}</h3>
+                    {% for contest in contests %}
+                        <div>
+                            {{ forloop.counter }}. <a href="{{ contest.get_absolute_url }}">{{ contest.name }}</a>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="text-warning mt30">{% trans 'Team has not been participated in contests yet' %}</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

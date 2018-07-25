@@ -1,0 +1,89 @@
+{% extends '_layout.html' %}
+
+{% load dict_filters %}
+
+{% block title %}Scoreboard &bull; {{ contest.name }}{% endblock %}
+
+{% block content %}
+    <div class="page contest-page">
+        {% include 'contests/_contest_header.html' with contest=contest %}
+
+        <h1 class="page__header">Scoreboard</h1>
+
+        <table class="table table-stripped table-responsive">
+            <thead>
+                {% if with_categories %}
+                    <tr>
+                        <td></td>
+                        {% for category in categories %}
+                            {% if category.tasks.count > 0 %}
+                                <td colspan="{{ category.tasks.count }}" class="ellipsis" title="{{ category.name }}"><strong>{{ category.name }}</strong></td>
+                            {% endif %}
+                        {% endfor %}
+                    </tr>
+                {% endif %}
+
+                <tr>
+                    <td><strong>Participant</strong></td>
+                    {% if with_categories %}
+                        {% for category in categories %}
+                            {% for task in category.tasks.all %}
+                                <td>
+                                    <a href="{% url 'contests:task' contest.id task.id %}">
+                                        <small title="{{ category.name }} {{ task.max_score }}: {{ task.name }}">
+                                            <strong>{{ task.max_score }}</strong>
+                                        </small>
+                                    </a>
+                                </td>
+                            {% endfor %}
+                        {% endfor %}
+                    {% else %}
+                        {% for task in tasks %}
+                            <td>
+                                <a href="{% url 'contests:task' contest.id task.id %}">
+                                    <small title="{{ task.max_score }}: {{ task.name }}">
+                                        <strong>
+                                            {{ task.max_score }}
+                                        </strong>
+                                    </small>
+                                </a>
+                            </td>
+                        {% endfor %}
+                    {% endif %}
+                    <td><strong>Score</strong></td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for participant in participants %}
+                    <tr>
+                        <td>
+                            {{ forloop.counter }}. <a href="{{ participant.get_absolute_url }}">{{ participant.name }}</a>
+                            {% if participant.is_disqualified %}
+                                <div class="mt0">
+                                    <small class="text-danger">Disqualified</small>
+                                </div>
+                            {% endif %}
+                        </td>
+
+                        {% if with_categories %}
+                            {% for category in categories %}
+                                {% for task in category.tasks.all %}
+                                    <td>
+                                        {% if max_scored_attempt_by_participant_and_task|has_item:participant.id and max_scored_attempt_by_participant_and_task|item:participant.id|has_item:task.id %}
+                                            <small title="{{ max_scored_attempt_by_participant_and_task|item:participant.id|item:task.id|attr:'created_at' }}">
+                                                {{ max_scored_attempt_by_participant_and_task|item:participant.id|item:task.id|attr:'score' }}
+                                            </small>
+                                        {% endif %}
+                                    </td>
+                                {% endfor %}
+                            {% endfor %}
+                        {% else %}
+                        {% endif %}
+
+                        <td>{{ scores_by_participant|item:participant.id }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

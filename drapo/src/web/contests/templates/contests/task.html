@@ -1,0 +1,86 @@
+{% extends '_layout.html' %}
+
+{% load markdown_deux_tags %}
+{% load bootstrap %}
+
+{% block title %}{{ statement.title }} &bull; {{ contest.name }}{% endblock %}
+
+{% block content %}
+    <div class="page task-page">
+        <h1 class="page__header">
+            {{ task.max_score }}.
+            {{ statement.title }}
+
+            {% if user.is_staff %}
+                <a href="{% url 'contests:task_opens' contest.id task.id %}" class="text-small">Opening status</a>
+            {% endif %}
+
+            {% if participant_score %}
+                <div class="fs14 fw300 mt10">
+                    {% if participant_score == task.max_score %}
+                        <div class="label label-success">
+                            You already solved this task and got {{ task.max_score }} point{{ task.max_score|pluralize }}
+                        </div>
+                    {% else %}
+                        <div class="label label-primary">
+                            You have {{ participant_score }} of {{ task.max_score }} point{{ task.max_score|pluralize }} for this task
+                        </div>
+                    {% endif %}
+                </div>
+            {% endif %}
+        </h1>
+
+        {{ statement.statement|markdown }}
+
+        {% if files %}
+            <div class="task__files mt30 mb20">
+                {% for file in files %}
+                    <div class="task__file ib">
+                        <a href="{% url 'contests:task_file' contest.id file.id %}" class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-download"></span>
+                            {{ file.name|default:'File' }}
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% if user.is_authenticated and contest.is_running and participant %}
+            <form method="POST" action="" class="attempt-form  mt30  form-inline">
+                {% csrf_token %}
+                {{ attempt_form|bootstrap_inline }}
+                <div class="form-group">
+                    <button class="ml15 btn btn-primary btn-lg btn-inline">Send</button>
+                </div>
+            </form>
+        {% elif not contest.is_running %}
+            {% if contest.is_finished %}
+                <div class="text-danger pt15 fw400">
+                    Sorry, you can't send answer after the contest finished.
+                </div>
+            {% endif %}
+        {% elif not user.is_authenticated %}
+            <div class="pt15 fw400">
+                <a href="{% url 'users:login' %}?next={{ request.path }}">Login</a>
+                or
+                <a href="{% url 'users:register' %}?next={{ request.path }}">register</a>
+                to send an answer.
+            </div>
+        {% elif not participant %}
+            {% if contest.can_register_now %}
+                <div class="text-danger pt15 fw400">
+                    {% if contest.is_team %}
+                        <a href="{% url 'contests:join' contest.id %}">Join</a> to the contest to solve tasks.
+                    {% else %}
+                        <a href="" class="post-link" data-url="{% url 'contests:join' contest.id %}">Join</a> to the contest to solve tasks.
+                    {% endif %}
+                </div>
+            {% else %}
+                <div class="text-danger pt15 fw400">
+                    Sorry, registration to the contest is closed already. If you are registered, login as a participant.
+                </div>
+            {% endif %}
+        {% endif %}
+
+    </div>
+{% endblock %}
