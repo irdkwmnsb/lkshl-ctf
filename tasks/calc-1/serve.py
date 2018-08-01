@@ -46,7 +46,7 @@ def handle(connection: socket.socket, address):
             connection.sendall("\n".encode())
             data = None
             try:
-                connection.settimeout(3)
+                connection.settimeout(1)
                 data = connection.recv(1024)
             except:
                 pass
@@ -55,7 +55,7 @@ def handle(connection: socket.socket, address):
             if not data:
                 logger.debug("Timeout".encode())
                 connection.sendall("Time is up!\n".encode())
-                connection.close()
+                connection.shutdown(socket.SHUT_RDWR)
                 break
 
             ans = data.decode().strip()
@@ -63,17 +63,19 @@ def handle(connection: socket.socket, address):
             if ans != eq[1]:
                 logging.debug("Incorrect")
                 connection.sendall("Incorrect\n".encode())
-                connection.close()
+                connection.shutdown(socket.SHUT_RDWR)
                 break
             else:
                 connection.sendall("Correct\n".encode())
                 logging.debug("Correct")
         else:
-            connection.sendall("Congratulations! Your flag is %s \n".format(flag).encode())
+            logger.warning(f"Team {team} solved!")
+            connection.sendall("Congratulations! Your flag is {0} \n".format(flag).encode())
     except:
         logger.exception("Problem handling request")
     finally:
         logger.debug("Closing socket")
+        connection.shutdown(socket.SHUT_RDWR)
         connection.close()
 
 class Server(object):
