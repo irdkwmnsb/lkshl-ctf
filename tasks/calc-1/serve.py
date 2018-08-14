@@ -12,12 +12,27 @@ def get_task() -> Tuple[str, str]:
     s = f"{n1} {p} {n2}"
     return (s, str(int(eval(s))))
 
+import logging
+def init_logger(logger):
+    logger.setLevel(logging.DEBUG)
+    
+    log_formatter = logging.Formatter("[%(asctime)s] [%(name)8s:%(process)-6.6s] [%(levelname)-5.5s] --- %(message)s")
+
+    file_handler = logging.FileHandler("./latest.log")
+    file_handler.setLevel(logging.DEBUG)
+    file_handler.setFormatter(log_formatter)
+    logger.addHandler(file_handler)
+
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(logging.INFO)
+    console_handler.setFormatter(log_formatter)
+    logger.addHandler(console_handler)
+    
 def handle(connection: socket.socket, address):
-    import logging
-    logging.basicConfig(level=logging.DEBUG)
-    logger = logging.getLogger("process-%r" % (address,))
     try:
-        logger.debug("Connected %r at %r", connection, address)
+        logger = logging.getLogger("handler")
+        init_logger(logger)
+        logger.info("Connected at %r", address)
 
         flag = "Something unexpected happened. If you see this message, please contact us"
 
@@ -48,31 +63,33 @@ def handle(connection: socket.socket, address):
             try:
                 connection.settimeout(1)
                 data = connection.recv(1024)
+                connection.settimeout(10)
             except:
                 pass
             logger.debug("Received data %r", data)
 
             if not data:
                 logger.debug("Timeout".encode())
+                logger.info(f"{team}{address} timeout")
                 connection.sendall("Time is up!\n".encode())
                 connection.shutdown(socket.SHUT_RDWR)
                 break
-
-            ans = data.decode().strip()
-            logging.debug("Interpreting as %r", ans)
-            if ans != eq[1]:
-                logging.debug("Incorrect")
+            if eq[1] == data.decode().strip():
+                connection.sendall("Correct\n".encode())
+                logger.debug("Correct")
+            else:
+                logger.debug("Incorrect")
+                logger.info(f"{team}{address} incorrect")
                 connection.sendall("Incorrect\n".encode())
                 connection.shutdown(socket.SHUT_RDWR)
                 break
-            else:
-                connection.sendall("Correct\n".encode())
-                logging.debug("Correct")
         else:
-            logger.warning(f"Team {team} solved!")
+            logger.warning(f"Team {team}{address} solved!")
             connection.sendall("Congratulations! Your flag is {0} \n".format(flag).encode())
     except:
         logger.exception("Problem handling request")
+        connection.sendall(("Something wrong happent. If you see this, please contact admins with this timestamp: " + \
+                                datetime.now().strftime("%D %X:%f")).encode())
     finally:
         logger.debug("Closing socket")
         connection.shutdown(socket.SHUT_RDWR)
@@ -80,8 +97,8 @@ def handle(connection: socket.socket, address):
 
 class Server(object):
     def __init__(self, hostname, port):
-        import logging
         self.logger = logging.getLogger("server")
+        init_logger(self.logger)
         self.hostname = hostname
         self.port = port
 
@@ -100,18 +117,20 @@ class Server(object):
             self.logger.debug("Started process %r", process)
 
 if __name__ == "__main__":
-    import logging
-    logging.basicConfig(level=logging.DEBUG)
-    server = Server("0.0.0.0", 73)
+    logger = logging.getLogger("main")
+    init_logger(logger)
+    import sys
+    port = int(sys.argv[1])
+    server = Server("0.0.0.0", port)
     try:
-        logging.info("Listening")
+        logger.info("Listening")
         server.start()
     except:
-        logging.exception("Unexpected exception")
+        logger.exception("Unexpected exception")
     finally:
-        logging.info("Shutting down")
+        logger.info("Shutting down")
         for process in multiprocessing.active_children():
-            logging.info("Shutting down process %r", process)
+            logger.info("Shutting down process %r", process)
             process.terminate()
             process.join()
-    logging.info("All done")
+    logger.info("All done")

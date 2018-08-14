@@ -1,0 +1,455 @@
+[2018-08-14 11:13:35,384] [    main:8316  ] [INFO ] --- Listening
+[2018-08-14 11:13:35,384] [  server:8316  ] [DEBUG] --- listening
+[2018-08-14 11:13:44,110] [  server:8316  ] [DEBUG] --- Got connection
+[2018-08-14 11:13:44,220] [  server:8316  ] [DEBUG] --- Started process <Process(Process-1, started daemon)>
+[2018-08-14 11:13:44,221] [  server:8316  ] [DEBUG] --- Got connection
+[2018-08-14 11:13:44,225] [  server:8316  ] [DEBUG] --- Started process <Process(Process-2, started daemon)>
+[2018-08-14 11:13:44,364] [  server:8316  ] [DEBUG] --- Got connection
+[2018-08-14 11:13:44,371] [  server:8316  ] [DEBUG] --- Started process <Process(Process-3, started daemon)>
+[2018-08-14 11:13:44,384] [  server:8316  ] [DEBUG] --- Got connection
+[2018-08-14 11:13:44,388] [  server:8316  ] [DEBUG] --- Started process <Process(Process-4, started daemon)>
+[2018-08-14 11:13:44,510] [  server:8316  ] [DEBUG] --- Got connection
+[2018-08-14 11:13:44,516] [  server:8316  ] [DEBUG] --- Started process <Process(Process-5, started daemon)>
+[2018-08-14 11:13:44,538] [  server:8316  ] [DEBUG] --- Got connection
+[2018-08-14 11:13:44,542] [  server:8316  ] [DEBUG] --- Started process <Process(Process-6, started daemon)>
+[2018-08-14 11:13:44,618] [ handler:12916 ] [INFO ] --- Connected at ('127.0.0.1', 3049)
+[2018-08-14 11:13:44,619] [ handler:12916 ] [DEBUG] --- Made problem: ('1 + -1', '0')
+[2018-08-14 11:13:44,622] [  server:8316  ] [DEBUG] --- Got connection
+[2018-08-14 11:13:44,627] [  server:8316  ] [DEBUG] --- Started process <Process(Process-7, started daemon)>
+[2018-08-14 11:13:44,632] [ handler:12916 ] [DEBUG] --- Received data b'0\n'
+[2018-08-14 11:13:44,633] [ handler:12916 ] [DEBUG] --- Incorrect
+[2018-08-14 11:13:44,633] [ handler:12916 ] [DEBUG] --- Closing socket
+[2018-08-14 11:13:44,661] [ handler:14280 ] [INFO ] --- Connected at ('127.0.0.1', 3048)
+[2018-08-14 11:13:44,663] [ handler:14280 ] [DEBUG] --- Made problem: ('-6 * -8', '48')
+[2018-08-14 11:13:44,681] [ handler:14280 ] [DEBUG] --- Received data b'48\n'
+[2018-08-14 11:13:44,682] [ handler:14280 ] [DEBUG] --- Incorrect
+[2018-08-14 11:13:44,682] [ handler:14280 ] [DEBUG] --- Closing socket
+[2018-08-14 11:13:44,783] [  server:8316  ] [DEBUG] --- Got connection
+[2018-08-14 11:13:44,788] [  server:8316  ] [DEBUG] --- Started process <Process(Process-8, started daemon)>
+[2018-08-14 11:13:44,972] [ handler:5780  ] [INFO ] --- Connected at ('127.0.0.1', 3051)
+[2018-08-14 11:13:44,973] [ handler:5780  ] [DEBUG] --- Made problem: ('-2 * -3', '6')
+[2018-08-14 11:13:44,989] [  server:8316  ] [DEBUG] --- Got connection
+[2018-08-14 11:13:44,997] [  server:8316  ] [DEBUG] --- Started process <Process(Process-9, started daemon)>
+[2018-08-14 11:13:45,047] [ handler:5780  ] [DEBUG] --- Received data b'6\n'
+[2018-08-14 11:13:45,047] [ handler:5780  ] [DEBUG] --- Incorrect
+[2018-08-14 11:13:45,048] [ handler:5780  ] [DEBUG] --- Closing socket
+[2018-08-14 11:13:45,094] [ handler:4912  ] [INFO ] --- Connected at ('127.0.0.1', 3052)
+[2018-08-14 11:13:45,097] [ handler:4912  ] [DEBUG] --- Made problem: ('-7 - -6', '-1')
+[2018-08-14 11:13:45,137] [ handler:5508  ] [INFO ] --- Connected at ('127.0.0.1', 3053)
+[2018-08-14 11:13:45,138] [ handler:5508  ] [DEBUG] --- Made problem: ('-7 + 8', '1')
+[2018-08-14 11:13:45,152] [ handler:4912  ] [DEBUG] --- Received data b'-1\n'
+[2018-08-14 11:13:45,153] [ handler:4912  ] [DEBUG] --- Incorrect
+[2018-08-14 11:13:45,153] [ handler:4912  ] [DEBUG] --- Closing socket
+[2018-08-14 11:13:45,162] [ handler:5336  ] [INFO ] --- Connected at ('127.0.0.1', 3054)
+[2018-08-14 11:13:45,164] [ handler:5336  ] [DEBUG] --- Made problem: ('9 + 10', '19')
+[2018-08-14 11:13:45,176] [ handler:5336  ] [DEBUG] --- Received data b'19\n'
+[2018-08-14 11:13:45,177] [ handler:5336  ] [DEBUG] --- Incorrect
+[2018-08-14 11:13:45,178] [ handler:5336  ] [DEBUG] --- Closing socket
+[2018-08-14 11:13:45,307] [ handler:5508  ] [DEBUG] --- Received data b'1\n'
+[2018-08-14 11:13:45,308] [ handler:5508  ] [DEBUG] --- Incorrect
+[2018-08-14 11:13:45,308] [ handler:5508  ] [DEBUG] --- Closing socket
+[2018-08-14 11:13:45,336] [ handler:4148  ] [INFO ] --- Connected at ('127.0.0.1', 3050)
+[2018-08-14 11:13:45,337] [ handler:4148  ] [DEBUG] --- Made problem: ('-8 - 1', '-9')
+[2018-08-14 11:13:45,358] [ handler:4148  ] [DEBUG] --- Received data b'-9\n'
+[2018-08-14 11:13:45,359] [ handler:4148  ] [DEBUG] --- Incorrect
+[2018-08-14 11:13:45,359] [ handler:4148  ] [DEBUG] --- Closing socket
+[2018-08-14 11:13:45,469] [ handler:14804 ] [INFO ] --- Connected at ('127.0.0.1', 3055)
+[2018-08-14 11:13:45,473] [ handler:14804 ] [DEBUG] --- Made problem: ('7 * 5', '35')
+[2018-08-14 11:13:45,605] [ handler:14804 ] [DEBUG] --- Received data b'35\n'
+[2018-08-14 11:13:45,606] [ handler:14804 ] [DEBUG] --- Incorrect
+[2018-08-14 11:13:45,606] [ handler:14804 ] [DEBUG] --- Closing socket
+[2018-08-14 11:13:45,680] [ handler:2848  ] [INFO ] --- Connected at ('127.0.0.1', 3056)
+[2018-08-14 11:13:45,685] [ handler:2848  ] [DEBUG] --- Made problem: ('-3 + 8', '5')
+[2018-08-14 11:13:45,687] [ handler:2848  ] [DEBUG] --- Received data b'5\n'
+[2018-08-14 11:13:45,687] [ handler:2848  ] [DEBUG] --- Incorrect
+[2018-08-14 11:13:45,688] [ handler:2848  ] [DEBUG] --- Closing socket
+[2018-08-14 11:13:45,886] [  server:8316  ] [DEBUG] --- Got connection
+[2018-08-14 11:13:45,891] [  server:8316  ] [DEBUG] --- Started process <Process(Process-10, started daemon)>
+[2018-08-14 11:13:45,927] [  server:8316  ] [DEBUG] --- Got connection
+[2018-08-14 11:13:45,933] [  server:8316  ] [DEBUG] --- Started process <Process(Process-11, started daemon)>
+[2018-08-14 11:13:45,935] [  server:8316  ] [DEBUG] --- Got connection
+[2018-08-14 11:13:45,939] [  server:8316  ] [DEBUG] --- Started process <Process(Process-12, started daemon)>
+[2018-08-14 11:13:46,103] [  server:8316  ] [DEBUG] --- Got connection
+[2018-08-14 11:13:46,107] [  server:8316  ] [DEBUG] --- Started process <Process(Process-13, started daemon)>
+[2018-08-14 11:13:46,290] [ handler:7416  ] [INFO ] --- Connected at ('127.0.0.1', 3058)
+[2018-08-14 11:13:46,300] [ handler:8104  ] [INFO ] --- Connected at ('127.0.0.1', 3057)
+[2018-08-14 11:13:46,301] [ handler:7416  ] [DEBUG] --- Made problem: ('1 * 5', '5')
+[2018-08-14 11:13:46,303] [ handler:8104  ] [DEBUG] --- Made problem: ('-7 + 2', '-5')
+[2018-08-14 11:13:46,305] [ handler:8104  ] [DEBUG] --- Received data b'-5\n'
+[2018-08-14 11:13:46,305] [ handler:8104  ] [DEBUG] --- Incorrect
+[2018-08-14 11:13:46,305] [ handler:8104  ] [DEBUG] --- Closing socket
+[2018-08-14 11:13:46,307] [ handler:7416  ] [DEBUG] --- Received data b'5\n'
+[2018-08-14 11:13:46,308] [ handler:7416  ] [DEBUG] --- Incorrect
+[2018-08-14 11:13:46,308] [ handler:7416  ] [DEBUG] --- Closing socket
+[2018-08-14 11:13:46,461] [ handler:14008 ] [INFO ] --- Connected at ('127.0.0.1', 3059)
+[2018-08-14 11:13:46,464] [ handler:14008 ] [DEBUG] --- Made problem: ('-9 + -8', '-17')
+[2018-08-14 11:13:46,471] [  server:8316  ] [DEBUG] --- Got connection
+[2018-08-14 11:13:46,474] [ handler:14008 ] [DEBUG] --- Received data b'-17\n'
+[2018-08-14 11:13:46,475] [ handler:14008 ] [DEBUG] --- Incorrect
+[2018-08-14 11:13:46,475] [ handler:14008 ] [DEBUG] --- Closing socket
+[2018-08-14 11:13:46,475] [  server:8316  ] [DEBUG] --- Started process <Process(Process-14, started daemon)>
+[2018-08-14 11:13:46,541] [  server:8316  ] [DEBUG] --- Got connection
+[2018-08-14 11:13:46,547] [  server:8316  ] [DEBUG] --- Started process <Process(Process-15, started daemon)>
+[2018-08-14 11:13:46,576] [ handler:7656  ] [INFO ] --- Connected at ('127.0.0.1', 3060)
+[2018-08-14 11:13:46,584] [ handler:7656  ] [DEBUG] --- Made problem: ('6 + -3', '3')
+[2018-08-14 11:13:46,589] [ handler:7656  ] [DEBUG] --- Received data b'3\n'
+[2018-08-14 11:13:46,590] [ handler:7656  ] [DEBUG] --- Incorrect
+[2018-08-14 11:13:46,590] [ handler:7656  ] [DEBUG] --- Closing socket
+[2018-08-14 11:13:46,837] [ handler:15324 ] [INFO ] --- Connected at ('127.0.0.1', 3061)
+[2018-08-14 11:13:46,838] [ handler:15324 ] [DEBUG] --- Made problem: ('9 + 7', '16')
+[2018-08-14 11:13:46,840] [ handler:15324 ] [DEBUG] --- Received data b'16\n'
+[2018-08-14 11:13:46,841] [ handler:15324 ] [DEBUG] --- Incorrect
+[2018-08-14 11:13:46,841] [ handler:15324 ] [DEBUG] --- Closing socket
+[2018-08-14 11:13:46,896] [ handler:15052 ] [INFO ] --- Connected at ('127.0.0.1', 3062)
+[2018-08-14 11:13:46,899] [ handler:15052 ] [DEBUG] --- Made problem: ('1 - 3', '-2')
+[2018-08-14 11:13:46,901] [ handler:15052 ] [DEBUG] --- Received data b'-2\n'
+[2018-08-14 11:13:46,902] [ handler:15052 ] [DEBUG] --- Incorrect
+[2018-08-14 11:13:46,902] [ handler:15052 ] [DEBUG] --- Closing socket
+[2018-08-14 11:13:54,539] [  server:8316  ] [DEBUG] --- Got connection
+[2018-08-14 11:13:54,543] [  server:8316  ] [DEBUG] --- Started process <Process(Process-16, started daemon)>
+[2018-08-14 11:13:54,697] [ handler:4796  ] [INFO ] --- Connected at ('127.0.0.1', 3064)
+[2018-08-14 11:13:54,698] [ handler:4796  ] [DEBUG] --- Made problem: ('-10 + -7', '-17')
+[2018-08-14 11:13:54,700] [ handler:4796  ] [DEBUG] --- Received data b'-17\n'
+[2018-08-14 11:13:54,701] [ handler:4796  ] [DEBUG] --- Incorrect
+[2018-08-14 11:13:54,701] [ handler:4796  ] [DEBUG] --- Closing socket
+[2018-08-14 11:15:08,292] [  server:8316  ] [DEBUG] --- Got connection
+[2018-08-14 11:15:08,295] [  server:8316  ] [DEBUG] --- Started process <Process(Process-17, started daemon)>
+[2018-08-14 11:15:08,434] [ handler:12484 ] [INFO ] --- Connected at ('127.0.0.1', 3071)
+[2018-08-14 11:15:08,435] [ handler:12484 ] [DEBUG] --- Made problem: ('-2 - 5', '-7')
+[2018-08-14 11:15:08,437] [ handler:12484 ] [DEBUG] --- Received data b'-7\n'
+[2018-08-14 11:15:08,437] [ handler:12484 ] [DEBUG] --- Incorrect
+[2018-08-14 11:15:08,438] [ handler:12484 ] [INFO ] --- team_1('127.0.0.1', 3071) incorrect
+[2018-08-14 11:15:08,438] [ handler:12484 ] [DEBUG] --- Closing socket
+[2018-08-14 11:15:14,472] [    main:7932  ] [INFO ] --- Listening
+[2018-08-14 11:15:14,473] [  server:7932  ] [DEBUG] --- listening
+[2018-08-14 11:15:19,837] [  server:7932  ] [DEBUG] --- Got connection
+[2018-08-14 11:15:19,872] [  server:7932  ] [DEBUG] --- Started process <Process(Process-1, started daemon)>
+[2018-08-14 11:15:19,992] [ handler:10172 ] [INFO ] --- Connected at ('127.0.0.1', 3072)
+[2018-08-14 11:15:19,993] [ handler:10172 ] [DEBUG] --- Made problem: ('7 - -9', '16')
+[2018-08-14 11:15:19,995] [ handler:10172 ] [DEBUG] --- Received data b'16\n'
+[2018-08-14 11:15:19,995] [ handler:10172 ] [DEBUG] --- Incorrect
+[2018-08-14 11:15:19,995] [ handler:10172 ] [INFO ] --- team_1('127.0.0.1', 3072) incorrect
+[2018-08-14 11:15:19,996] [ handler:10172 ] [DEBUG] --- Closing socket
+[2018-08-14 11:15:37,558] [  server:7932  ] [DEBUG] --- Got connection
+[2018-08-14 11:15:37,561] [  server:7932  ] [DEBUG] --- Started process <Process(Process-2, started daemon)>
+[2018-08-14 11:15:37,693] [ handler:2500  ] [INFO ] --- Connected at ('127.0.0.1', 3074)
+[2018-08-14 11:15:37,694] [ handler:2500  ] [DEBUG] --- Made problem: ('9 + -4', '5')
+[2018-08-14 11:15:37,695] [ handler:2500  ] [DEBUG] --- Received data b'5\n'
+[2018-08-14 11:15:37,696] [ handler:2500  ] [DEBUG] --- Incorrect
+[2018-08-14 11:15:37,696] [ handler:2500  ] [INFO ] --- team_1('127.0.0.1', 3074) incorrect
+[2018-08-14 11:15:37,696] [ handler:2500  ] [DEBUG] --- Closing socket
+[2018-08-14 11:15:40,872] [    main:7264  ] [INFO ] --- Listening
+[2018-08-14 11:15:40,873] [  server:7264  ] [DEBUG] --- listening
+[2018-08-14 11:15:42,720] [  server:7264  ] [DEBUG] --- Got connection
+[2018-08-14 11:15:42,750] [  server:7264  ] [DEBUG] --- Started process <Process(Process-1, started daemon)>
+[2018-08-14 11:15:42,870] [ handler:15332 ] [INFO ] --- Connected at ('127.0.0.1', 3075)
+[2018-08-14 11:15:42,871] [ handler:15332 ] [DEBUG] --- Made problem: ('3 + -10', '-7')
+[2018-08-14 11:15:42,872] [ handler:15332 ] [DEBUG] --- Received data b'-7\n'
+[2018-08-14 11:15:42,872] [ handler:15332 ] [DEBUG] --- Incorrect
+[2018-08-14 11:15:42,873] [ handler:15332 ] [INFO ] --- team_1('127.0.0.1', 3075) incorrect
+[2018-08-14 11:15:42,873] [ handler:15332 ] [DEBUG] --- Closing socket
+[2018-08-14 11:15:57,353] [  server:7264  ] [DEBUG] --- Got connection
+[2018-08-14 11:15:57,357] [  server:7264  ] [DEBUG] --- Started process <Process(Process-2, started daemon)>
+[2018-08-14 11:15:57,501] [ handler:14752 ] [INFO ] --- Connected at ('127.0.0.1', 3077)
+[2018-08-14 11:15:57,502] [ handler:14752 ] [DEBUG] --- Made problem: ('-7 * -8', '56')
+[2018-08-14 11:15:57,504] [ handler:14752 ] [DEBUG] --- Received data b'56\n'
+[2018-08-14 11:15:57,504] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,504] [ handler:14752 ] [DEBUG] --- Made problem: ('-1 - -1', '0')
+[2018-08-14 11:15:57,505] [ handler:14752 ] [DEBUG] --- Received data b'0\n'
+[2018-08-14 11:15:57,505] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,505] [ handler:14752 ] [DEBUG] --- Made problem: ('-1 + -8', '-9')
+[2018-08-14 11:15:57,506] [ handler:14752 ] [DEBUG] --- Received data b'-9\n'
+[2018-08-14 11:15:57,506] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,506] [ handler:14752 ] [DEBUG] --- Made problem: ('7 * -4', '-28')
+[2018-08-14 11:15:57,507] [ handler:14752 ] [DEBUG] --- Received data b'-28\n'
+[2018-08-14 11:15:57,507] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,507] [ handler:14752 ] [DEBUG] --- Made problem: ('-7 + 9', '2')
+[2018-08-14 11:15:57,508] [ handler:14752 ] [DEBUG] --- Received data b'2\n'
+[2018-08-14 11:15:57,508] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,508] [ handler:14752 ] [DEBUG] --- Made problem: ('-8 - -6', '-2')
+[2018-08-14 11:15:57,509] [ handler:14752 ] [DEBUG] --- Received data b'-2\n'
+[2018-08-14 11:15:57,509] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,509] [ handler:14752 ] [DEBUG] --- Made problem: ('-4 + -6', '-10')
+[2018-08-14 11:15:57,510] [ handler:14752 ] [DEBUG] --- Received data b'-10\n'
+[2018-08-14 11:15:57,510] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,510] [ handler:14752 ] [DEBUG] --- Made problem: ('4 - -7', '11')
+[2018-08-14 11:15:57,511] [ handler:14752 ] [DEBUG] --- Received data b'11\n'
+[2018-08-14 11:15:57,511] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,511] [ handler:14752 ] [DEBUG] --- Made problem: ('-9 * 10', '-90')
+[2018-08-14 11:15:57,516] [ handler:14752 ] [DEBUG] --- Received data b'-90\n'
+[2018-08-14 11:15:57,517] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,517] [ handler:14752 ] [DEBUG] --- Made problem: ('0 + 10', '10')
+[2018-08-14 11:15:57,518] [ handler:14752 ] [DEBUG] --- Received data b'10\n'
+[2018-08-14 11:15:57,518] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,518] [ handler:14752 ] [DEBUG] --- Made problem: ('-9 - -10', '1')
+[2018-08-14 11:15:57,519] [ handler:14752 ] [DEBUG] --- Received data b'1\n'
+[2018-08-14 11:15:57,519] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,520] [ handler:14752 ] [DEBUG] --- Made problem: ('1 - 2', '-1')
+[2018-08-14 11:15:57,521] [ handler:14752 ] [DEBUG] --- Received data b'-1\n'
+[2018-08-14 11:15:57,521] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,521] [ handler:14752 ] [DEBUG] --- Made problem: ('0 - 10', '-10')
+[2018-08-14 11:15:57,522] [ handler:14752 ] [DEBUG] --- Received data b'-10\n'
+[2018-08-14 11:15:57,522] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,522] [ handler:14752 ] [DEBUG] --- Made problem: ('-7 - 7', '-14')
+[2018-08-14 11:15:57,522] [ handler:14752 ] [DEBUG] --- Received data b'-14\n'
+[2018-08-14 11:15:57,522] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,523] [ handler:14752 ] [DEBUG] --- Made problem: ('4 * 0', '0')
+[2018-08-14 11:15:57,523] [ handler:14752 ] [DEBUG] --- Received data b'0\n'
+[2018-08-14 11:15:57,523] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,523] [ handler:14752 ] [DEBUG] --- Made problem: ('-10 - 9', '-19')
+[2018-08-14 11:15:57,524] [ handler:14752 ] [DEBUG] --- Received data b'-19\n'
+[2018-08-14 11:15:57,524] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,524] [ handler:14752 ] [DEBUG] --- Made problem: ('-9 * -5', '45')
+[2018-08-14 11:15:57,527] [ handler:14752 ] [DEBUG] --- Received data b'45\n'
+[2018-08-14 11:15:57,527] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,527] [ handler:14752 ] [DEBUG] --- Made problem: ('5 - 4', '1')
+[2018-08-14 11:15:57,528] [ handler:14752 ] [DEBUG] --- Received data b'1\n'
+[2018-08-14 11:15:57,528] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,528] [ handler:14752 ] [DEBUG] --- Made problem: ('-6 - -8', '2')
+[2018-08-14 11:15:57,529] [ handler:14752 ] [DEBUG] --- Received data b'2\n'
+[2018-08-14 11:15:57,529] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,529] [ handler:14752 ] [DEBUG] --- Made problem: ('-4 - 8', '-12')
+[2018-08-14 11:15:57,530] [ handler:14752 ] [DEBUG] --- Received data b'-12\n'
+[2018-08-14 11:15:57,530] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,530] [ handler:14752 ] [DEBUG] --- Made problem: ('-6 * 0', '0')
+[2018-08-14 11:15:57,531] [ handler:14752 ] [DEBUG] --- Received data b'0\n'
+[2018-08-14 11:15:57,531] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,531] [ handler:14752 ] [DEBUG] --- Made problem: ('-1 + -6', '-7')
+[2018-08-14 11:15:57,532] [ handler:14752 ] [DEBUG] --- Received data b'-7\n'
+[2018-08-14 11:15:57,533] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,533] [ handler:14752 ] [DEBUG] --- Made problem: ('10 - -3', '13')
+[2018-08-14 11:15:57,533] [ handler:14752 ] [DEBUG] --- Received data b'13\n'
+[2018-08-14 11:15:57,533] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,533] [ handler:14752 ] [DEBUG] --- Made problem: ('-10 * 8', '-80')
+[2018-08-14 11:15:57,534] [ handler:14752 ] [DEBUG] --- Received data b'-80\n'
+[2018-08-14 11:15:57,534] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,534] [ handler:14752 ] [DEBUG] --- Made problem: ('3 * -7', '-21')
+[2018-08-14 11:15:57,535] [ handler:14752 ] [DEBUG] --- Received data b'-21\n'
+[2018-08-14 11:15:57,535] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,535] [ handler:14752 ] [DEBUG] --- Made problem: ('-3 * 2', '-6')
+[2018-08-14 11:15:57,538] [ handler:14752 ] [DEBUG] --- Received data b'-6\n'
+[2018-08-14 11:15:57,538] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,538] [ handler:14752 ] [DEBUG] --- Made problem: ('3 - 0', '3')
+[2018-08-14 11:15:57,539] [ handler:14752 ] [DEBUG] --- Received data b'3\n'
+[2018-08-14 11:15:57,539] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,539] [ handler:14752 ] [DEBUG] --- Made problem: ('-2 * 10', '-20')
+[2018-08-14 11:15:57,540] [ handler:14752 ] [DEBUG] --- Received data b'-20\n'
+[2018-08-14 11:15:57,540] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,540] [ handler:14752 ] [DEBUG] --- Made problem: ('-5 - -5', '0')
+[2018-08-14 11:15:57,541] [ handler:14752 ] [DEBUG] --- Received data b'0\n'
+[2018-08-14 11:15:57,541] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,541] [ handler:14752 ] [DEBUG] --- Made problem: ('4 + 2', '6')
+[2018-08-14 11:15:57,542] [ handler:14752 ] [DEBUG] --- Received data b'6\n'
+[2018-08-14 11:15:57,542] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,542] [ handler:14752 ] [DEBUG] --- Made problem: ('10 - 1', '9')
+[2018-08-14 11:15:57,543] [ handler:14752 ] [DEBUG] --- Received data b'9\n'
+[2018-08-14 11:15:57,543] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,543] [ handler:14752 ] [DEBUG] --- Made problem: ('5 * -5', '-25')
+[2018-08-14 11:15:57,544] [ handler:14752 ] [DEBUG] --- Received data b'-25\n'
+[2018-08-14 11:15:57,544] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,545] [ handler:14752 ] [DEBUG] --- Made problem: ('-8 - -2', '-6')
+[2018-08-14 11:15:57,549] [ handler:14752 ] [DEBUG] --- Received data b'-6\n'
+[2018-08-14 11:15:57,549] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,549] [ handler:14752 ] [DEBUG] --- Made problem: ('-1 * -3', '3')
+[2018-08-14 11:15:57,550] [ handler:14752 ] [DEBUG] --- Received data b'3\n'
+[2018-08-14 11:15:57,550] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,550] [ handler:14752 ] [DEBUG] --- Made problem: ('7 + -6', '1')
+[2018-08-14 11:15:57,551] [ handler:14752 ] [DEBUG] --- Received data b'1\n'
+[2018-08-14 11:15:57,551] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,551] [ handler:14752 ] [DEBUG] --- Made problem: ('5 * -3', '-15')
+[2018-08-14 11:15:57,553] [ handler:14752 ] [DEBUG] --- Received data b'-15\n'
+[2018-08-14 11:15:57,553] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,553] [ handler:14752 ] [DEBUG] --- Made problem: ('-8 + -8', '-16')
+[2018-08-14 11:15:57,554] [ handler:14752 ] [DEBUG] --- Received data b'-16\n'
+[2018-08-14 11:15:57,554] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,554] [ handler:14752 ] [DEBUG] --- Made problem: ('5 * -9', '-45')
+[2018-08-14 11:15:57,554] [ handler:14752 ] [DEBUG] --- Received data b'-45\n'
+[2018-08-14 11:15:57,555] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,555] [ handler:14752 ] [DEBUG] --- Made problem: ('-3 - -5', '2')
+[2018-08-14 11:15:57,555] [ handler:14752 ] [DEBUG] --- Received data b'2\n'
+[2018-08-14 11:15:57,555] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,556] [ handler:14752 ] [DEBUG] --- Made problem: ('-4 * -4', '16')
+[2018-08-14 11:15:57,556] [ handler:14752 ] [DEBUG] --- Received data b'16\n'
+[2018-08-14 11:15:57,556] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,556] [ handler:14752 ] [DEBUG] --- Made problem: ('4 + 6', '10')
+[2018-08-14 11:15:57,559] [ handler:14752 ] [DEBUG] --- Received data b'10\n'
+[2018-08-14 11:15:57,560] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,560] [ handler:14752 ] [DEBUG] --- Made problem: ('2 * 6', '12')
+[2018-08-14 11:15:57,560] [ handler:14752 ] [DEBUG] --- Received data b'12\n'
+[2018-08-14 11:15:57,560] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,560] [ handler:14752 ] [DEBUG] --- Made problem: ('-5 - -2', '-3')
+[2018-08-14 11:15:57,561] [ handler:14752 ] [DEBUG] --- Received data b'-3\n'
+[2018-08-14 11:15:57,561] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,561] [ handler:14752 ] [DEBUG] --- Made problem: ('1 + 0', '1')
+[2018-08-14 11:15:57,562] [ handler:14752 ] [DEBUG] --- Received data b'1\n'
+[2018-08-14 11:15:57,562] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,562] [ handler:14752 ] [DEBUG] --- Made problem: ('-5 + 4', '-1')
+[2018-08-14 11:15:57,562] [ handler:14752 ] [DEBUG] --- Received data b'-1\n'
+[2018-08-14 11:15:57,563] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,563] [ handler:14752 ] [DEBUG] --- Made problem: ('5 + 9', '14')
+[2018-08-14 11:15:57,563] [ handler:14752 ] [DEBUG] --- Received data b'14\n'
+[2018-08-14 11:15:57,564] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,564] [ handler:14752 ] [DEBUG] --- Made problem: ('-2 + -3', '-5')
+[2018-08-14 11:15:57,565] [ handler:14752 ] [DEBUG] --- Received data b'-5\n'
+[2018-08-14 11:15:57,565] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,565] [ handler:14752 ] [DEBUG] --- Made problem: ('-3 * 3', '-9')
+[2018-08-14 11:15:57,566] [ handler:14752 ] [DEBUG] --- Received data b'-9\n'
+[2018-08-14 11:15:57,566] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,566] [ handler:14752 ] [DEBUG] --- Made problem: ('0 - -5', '5')
+[2018-08-14 11:15:57,569] [ handler:14752 ] [DEBUG] --- Received data b'5\n'
+[2018-08-14 11:15:57,569] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,569] [ handler:14752 ] [DEBUG] --- Made problem: ('5 - 0', '5')
+[2018-08-14 11:15:57,570] [ handler:14752 ] [DEBUG] --- Received data b'5\n'
+[2018-08-14 11:15:57,570] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,570] [ handler:14752 ] [DEBUG] --- Made problem: ('-3 * -9', '27')
+[2018-08-14 11:15:57,571] [ handler:14752 ] [DEBUG] --- Received data b'27\n'
+[2018-08-14 11:15:57,571] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,571] [ handler:14752 ] [DEBUG] --- Made problem: ('-5 * 9', '-45')
+[2018-08-14 11:15:57,572] [ handler:14752 ] [DEBUG] --- Received data b'-45\n'
+[2018-08-14 11:15:57,572] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,572] [ handler:14752 ] [DEBUG] --- Made problem: ('8 * -1', '-8')
+[2018-08-14 11:15:57,573] [ handler:14752 ] [DEBUG] --- Received data b'-8\n'
+[2018-08-14 11:15:57,573] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,573] [ handler:14752 ] [DEBUG] --- Made problem: ('-7 - 0', '-7')
+[2018-08-14 11:15:57,574] [ handler:14752 ] [DEBUG] --- Received data b'-7\n'
+[2018-08-14 11:15:57,574] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,574] [ handler:14752 ] [DEBUG] --- Made problem: ('-1 - 2', '-3')
+[2018-08-14 11:15:57,575] [ handler:14752 ] [DEBUG] --- Received data b'-3\n'
+[2018-08-14 11:15:57,575] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,575] [ handler:14752 ] [DEBUG] --- Made problem: ('-1 * 0', '0')
+[2018-08-14 11:15:57,576] [ handler:14752 ] [DEBUG] --- Received data b'0\n'
+[2018-08-14 11:15:57,576] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,576] [ handler:14752 ] [DEBUG] --- Made problem: ('-6 * 1', '-6')
+[2018-08-14 11:15:57,580] [ handler:14752 ] [DEBUG] --- Received data b'-6\n'
+[2018-08-14 11:15:57,580] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,580] [ handler:14752 ] [DEBUG] --- Made problem: ('8 * 0', '0')
+[2018-08-14 11:15:57,581] [ handler:14752 ] [DEBUG] --- Received data b'0\n'
+[2018-08-14 11:15:57,582] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,582] [ handler:14752 ] [DEBUG] --- Made problem: ('-5 - -8', '3')
+[2018-08-14 11:15:57,583] [ handler:14752 ] [DEBUG] --- Received data b'3\n'
+[2018-08-14 11:15:57,583] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,583] [ handler:14752 ] [DEBUG] --- Made problem: ('2 * -4', '-8')
+[2018-08-14 11:15:57,584] [ handler:14752 ] [DEBUG] --- Received data b'-8\n'
+[2018-08-14 11:15:57,584] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,585] [ handler:14752 ] [DEBUG] --- Made problem: ('3 + -1', '2')
+[2018-08-14 11:15:57,586] [ handler:14752 ] [DEBUG] --- Received data b'2\n'
+[2018-08-14 11:15:57,586] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,586] [ handler:14752 ] [DEBUG] --- Made problem: ('3 - 4', '-1')
+[2018-08-14 11:15:57,587] [ handler:14752 ] [DEBUG] --- Received data b'-1\n'
+[2018-08-14 11:15:57,587] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,587] [ handler:14752 ] [DEBUG] --- Made problem: ('8 * 9', '72')
+[2018-08-14 11:15:57,587] [ handler:14752 ] [DEBUG] --- Received data b'72\n'
+[2018-08-14 11:15:57,588] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,588] [ handler:14752 ] [DEBUG] --- Made problem: ('-3 * 1', '-3')
+[2018-08-14 11:15:57,590] [ handler:14752 ] [DEBUG] --- Received data b'-3\n'
+[2018-08-14 11:15:57,590] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,591] [ handler:14752 ] [DEBUG] --- Made problem: ('6 - -1', '7')
+[2018-08-14 11:15:57,591] [ handler:14752 ] [DEBUG] --- Received data b'7\n'
+[2018-08-14 11:15:57,591] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,592] [ handler:14752 ] [DEBUG] --- Made problem: ('9 + 7', '16')
+[2018-08-14 11:15:57,592] [ handler:14752 ] [DEBUG] --- Received data b'16\n'
+[2018-08-14 11:15:57,592] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,592] [ handler:14752 ] [DEBUG] --- Made problem: ('6 + -8', '-2')
+[2018-08-14 11:15:57,593] [ handler:14752 ] [DEBUG] --- Received data b'-2\n'
+[2018-08-14 11:15:57,593] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,593] [ handler:14752 ] [DEBUG] --- Made problem: ('-9 * 7', '-63')
+[2018-08-14 11:15:57,594] [ handler:14752 ] [DEBUG] --- Received data b'-63\n'
+[2018-08-14 11:15:57,594] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,594] [ handler:14752 ] [DEBUG] --- Made problem: ('2 - 6', '-4')
+[2018-08-14 11:15:57,594] [ handler:14752 ] [DEBUG] --- Received data b'-4\n'
+[2018-08-14 11:15:57,594] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,595] [ handler:14752 ] [DEBUG] --- Made problem: ('10 * -1', '-10')
+[2018-08-14 11:15:57,595] [ handler:14752 ] [DEBUG] --- Received data b'-10\n'
+[2018-08-14 11:15:57,595] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,595] [ handler:14752 ] [DEBUG] --- Made problem: ('-2 * 10', '-20')
+[2018-08-14 11:15:57,596] [ handler:14752 ] [DEBUG] --- Received data b'-20\n'
+[2018-08-14 11:15:57,596] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,596] [ handler:14752 ] [DEBUG] --- Made problem: ('-1 - 10', '-11')
+[2018-08-14 11:15:57,597] [ handler:14752 ] [DEBUG] --- Received data b'-11\n'
+[2018-08-14 11:15:57,597] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,597] [ handler:14752 ] [DEBUG] --- Made problem: ('-2 - -5', '3')
+[2018-08-14 11:15:57,600] [ handler:14752 ] [DEBUG] --- Received data b'3\n'
+[2018-08-14 11:15:57,601] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,601] [ handler:14752 ] [DEBUG] --- Made problem: ('-1 - 3', '-4')
+[2018-08-14 11:15:57,601] [ handler:14752 ] [DEBUG] --- Received data b'-4\n'
+[2018-08-14 11:15:57,602] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,602] [ handler:14752 ] [DEBUG] --- Made problem: ('10 * 7', '70')
+[2018-08-14 11:15:57,602] [ handler:14752 ] [DEBUG] --- Received data b'70\n'
+[2018-08-14 11:15:57,603] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,603] [ handler:14752 ] [DEBUG] --- Made problem: ('-2 + 8', '6')
+[2018-08-14 11:15:57,604] [ handler:14752 ] [DEBUG] --- Received data b'6\n'
+[2018-08-14 11:15:57,604] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,604] [ handler:14752 ] [DEBUG] --- Made problem: ('1 * 8', '8')
+[2018-08-14 11:15:57,605] [ handler:14752 ] [DEBUG] --- Received data b'8\n'
+[2018-08-14 11:15:57,605] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,605] [ handler:14752 ] [DEBUG] --- Made problem: ('-10 * 1', '-10')
+[2018-08-14 11:15:57,606] [ handler:14752 ] [DEBUG] --- Received data b'-10\n'
+[2018-08-14 11:15:57,606] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,606] [ handler:14752 ] [DEBUG] --- Made problem: ('-4 * -8', '32')
+[2018-08-14 11:15:57,607] [ handler:14752 ] [DEBUG] --- Received data b'32\n'
+[2018-08-14 11:15:57,607] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,607] [ handler:14752 ] [DEBUG] --- Made problem: ('-1 * -4', '4')
+[2018-08-14 11:15:57,608] [ handler:14752 ] [DEBUG] --- Received data b'4\n'
+[2018-08-14 11:15:57,608] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,609] [ handler:14752 ] [DEBUG] --- Made problem: ('10 - -3', '13')
+[2018-08-14 11:15:57,612] [ handler:14752 ] [DEBUG] --- Received data b'13\n'
+[2018-08-14 11:15:57,612] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,612] [ handler:14752 ] [DEBUG] --- Made problem: ('-1 - -5', '4')
+[2018-08-14 11:15:57,613] [ handler:14752 ] [DEBUG] --- Received data b'4\n'
+[2018-08-14 11:15:57,613] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,613] [ handler:14752 ] [DEBUG] --- Made problem: ('-3 + -2', '-5')
+[2018-08-14 11:15:57,615] [ handler:14752 ] [DEBUG] --- Received data b'-5\n'
+[2018-08-14 11:15:57,615] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,615] [ handler:14752 ] [DEBUG] --- Made problem: ('-10 + 0', '-10')
+[2018-08-14 11:15:57,616] [ handler:14752 ] [DEBUG] --- Received data b'-10\n'
+[2018-08-14 11:15:57,616] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,616] [ handler:14752 ] [DEBUG] --- Made problem: ('4 * -1', '-4')
+[2018-08-14 11:15:57,617] [ handler:14752 ] [DEBUG] --- Received data b'-4\n'
+[2018-08-14 11:15:57,617] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,617] [ handler:14752 ] [DEBUG] --- Made problem: ('1 - -5', '6')
+[2018-08-14 11:15:57,617] [ handler:14752 ] [DEBUG] --- Received data b'6\n'
+[2018-08-14 11:15:57,618] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,618] [ handler:14752 ] [DEBUG] --- Made problem: ('-2 * -4', '8')
+[2018-08-14 11:15:57,618] [ handler:14752 ] [DEBUG] --- Received data b'8\n'
+[2018-08-14 11:15:57,618] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,619] [ handler:14752 ] [DEBUG] --- Made problem: ('1 + 3', '4')
+[2018-08-14 11:15:57,619] [ handler:14752 ] [DEBUG] --- Received data b'4\n'
+[2018-08-14 11:15:57,619] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,619] [ handler:14752 ] [DEBUG] --- Made problem: ('1 + 5', '6')
+[2018-08-14 11:15:57,622] [ handler:14752 ] [DEBUG] --- Received data b'6\n'
+[2018-08-14 11:15:57,622] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,622] [ handler:14752 ] [DEBUG] --- Made problem: ('1 + 1', '2')
+[2018-08-14 11:15:57,623] [ handler:14752 ] [DEBUG] --- Received data b'2\n'
+[2018-08-14 11:15:57,623] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,624] [ handler:14752 ] [DEBUG] --- Made problem: ('-5 * 10', '-50')
+[2018-08-14 11:15:57,624] [ handler:14752 ] [DEBUG] --- Received data b'-50\n'
+[2018-08-14 11:15:57,624] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,624] [ handler:14752 ] [DEBUG] --- Made problem: ('-9 * 6', '-54')
+[2018-08-14 11:15:57,625] [ handler:14752 ] [DEBUG] --- Received data b'-54\n'
+[2018-08-14 11:15:57,625] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,625] [ handler:14752 ] [DEBUG] --- Made problem: ('6 * -3', '-18')
+[2018-08-14 11:15:57,625] [ handler:14752 ] [DEBUG] --- Received data b'-18\n'
+[2018-08-14 11:15:57,626] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,626] [ handler:14752 ] [DEBUG] --- Made problem: ('-10 + 9', '-1')
+[2018-08-14 11:15:57,626] [ handler:14752 ] [DEBUG] --- Received data b'-1\n'
+[2018-08-14 11:15:57,626] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,627] [ handler:14752 ] [DEBUG] --- Made problem: ('2 + 3', '5')
+[2018-08-14 11:15:57,627] [ handler:14752 ] [DEBUG] --- Received data b'5\n'
+[2018-08-14 11:15:57,627] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,627] [ handler:14752 ] [DEBUG] --- Made problem: ('5 * -6', '-30')
+[2018-08-14 11:15:57,628] [ handler:14752 ] [DEBUG] --- Received data b'-30\n'
+[2018-08-14 11:15:57,628] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,628] [ handler:14752 ] [DEBUG] --- Made problem: ('2 - 1', '1')
+[2018-08-14 11:15:57,628] [ handler:14752 ] [DEBUG] --- Received data b'1\n'
+[2018-08-14 11:15:57,629] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,629] [ handler:14752 ] [DEBUG] --- Made problem: ('9 * -3', '-27')
+[2018-08-14 11:15:57,629] [ handler:14752 ] [DEBUG] --- Received data b'-27\n'
+[2018-08-14 11:15:57,629] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,629] [ handler:14752 ] [DEBUG] --- Made problem: ('7 - -2', '9')
+[2018-08-14 11:15:57,630] [ handler:14752 ] [DEBUG] --- Received data b'9\n'
+[2018-08-14 11:15:57,630] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,631] [ handler:14752 ] [DEBUG] --- Made problem: ('-8 + -9', '-17')
+[2018-08-14 11:15:57,634] [ handler:14752 ] [DEBUG] --- Received data b'-17\n'
+[2018-08-14 11:15:57,634] [ handler:14752 ] [DEBUG] --- Correct
+[2018-08-14 11:15:57,634] [ handler:14752 ] [WARNI] --- Team team_1('127.0.0.1', 3077) solved!
+[2018-08-14 11:15:57,635] [ handler:14752 ] [DEBUG] --- Closing socket
