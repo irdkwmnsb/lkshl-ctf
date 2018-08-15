@@ -1,1 +1,7 @@
 .idea
+
+*.pyc
+
+tasks/youtube-subtitles/video\.mp4
+
+tasks/youtube-subtitles/subtitles\.srt
