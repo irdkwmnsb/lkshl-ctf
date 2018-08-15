@@ -6,4 +6,4 @@ for n in out:
 flag = []
 for i in range(len(int_out) - 1, -1, -1):
     flag.append(chr(int_out[i] ^ int_out[i - 1]))
-print("".join(reversed(flag)))  
+print("".join(reversed(flag)))
