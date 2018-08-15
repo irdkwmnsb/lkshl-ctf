@@ -1,0 +1,1 @@
+python -m youtube_subtitles text.txt MAGIC{U_l1ke_b00k5_AKESYz9gfqnoez} video.mp4 subtitles.srt
