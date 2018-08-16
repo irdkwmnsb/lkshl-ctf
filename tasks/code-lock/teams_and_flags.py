@@ -1,0 +1,25 @@
+#!/usr/bin/env false
+# -*- coding: utf-8 -*-
+
+data = {
+    "team_1": "LKSHL{MD5_0F_TRRU3_1N_C0OK1E5_INOBt5GtE7}",
+    "team_2": "LKSHL{MD5_0F_TRRU3_1N_C0OK1E5_8LuedDqmfW}",
+    "team_3": "LKSHL{MD5_0F_TRRU3_1N_C0OK1E5_1k7I7P6ohT}",
+    "team_4": "LKSHL{MD5_0F_TRRU3_1N_C0OK1E5_uKluDnzUzi}",
+    "team_5": "LKSHL{MD5_0F_TRRU3_1N_C0OK1E5_iGZOz3n86V}",
+    "team_6": "LKSHL{MD5_0F_TRRU3_1N_C0OK1E5_lY6cf7ID8m}",
+    "team_7": "LKSHL{MD5_0F_TRRU3_1N_C0OK1E5_HFtOJ1LOwL}",
+    "team_8": "LKSHL{MD5_0F_TRRU3_1N_C0OK1E5_jacUBYtMBl}",
+    "team_9": "LKSHL{MD5_0F_TRRU3_1N_C0OK1E5_e6BZxavcYC}",
+    "team_10": "LKSHL{MD5_0F_TRRU3_1N_C0OK1E5_7sgjuci13a}",
+    "team_11": "LKSHL{MD5_0F_TRRU3_1N_C0OK1E5_DYEDvUxj8N}",
+    "team_12": "LKSHL{MD5_0F_TRRU3_1N_C0OK1E5_xRMVSsGuxz}",
+    "team_13": "LKSHL{MD5_0F_TRRU3_1N_C0OK1E5_ikTLV1t7JO}",
+    "team_14": "LKSHL{MD5_0F_TRRU3_1N_C0OK1E5_bkTOuZPqBc}",
+    "team_15": "LKSHL{MD5_0F_TRRU3_1N_C0OK1E5_Xswj2DlCdB}",
+    "team_16": "LKSHL{MD5_0F_TRRU3_1N_C0OK1E5_foYZgUKmgN}",
+    "team_17": "LKSHL{MD5_0F_TRRU3_1N_C0OK1E5_pKAc0sRqyt}",
+    "team_18": "LKSHL{MD5_0F_TRRU3_1N_C0OK1E5_8OZX8RIzxP}",
+    "team_19": "LKSHL{MD5_0F_TRRU3_1N_C0OK1E5_zNphOKIlTQ}",
+    "team_20": "LKSHL{MD5_0F_TRRU3_1N_C0OK1E5_YDPynBZcDC}",
+}
