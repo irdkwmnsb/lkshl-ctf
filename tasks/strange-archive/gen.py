@@ -25,6 +25,10 @@ def sh(*args, sudo=False, env=True, fatal=True):
             return False
     return True
 
+def get_team_id(n):
+    with open('team_ids.txt') as f:
+        return f.read().split('\n')[n-1]
+
 def main():
     if len(sys.argv) < 2:
         print('Usage: gen.py <team_id>')
@@ -32,7 +36,7 @@ def main():
 
     # Prepare magic and flag
     team_id = int(sys.argv[1])
-    flag = teams_and_flags.data['team_' + str(team_id)]
+    flag = teams_and_flags.data[get_team_id(team_id)]
 
     sh('mkdir', '-p', 'team' + str(team_id))
     os.chdir('team' + str(team_id))

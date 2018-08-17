@@ -26,9 +26,12 @@ content = '''#!/usr/bin/env false
 data = {
 '''
 
+with open('team_ids.txt') as f:
+    ids = f.read().split('\n')
+
 for i in range(n):
-    team_id = i + 1
-    content += '    "team_{}": "{}",\n'.format(team_id, flag_template.format(magic=random_str(chars, magic_len)))
+    team_id = ids[i]
+    content += '    "{}": "{}",\n'.format(team_id, flag_template.format(magic=random_str(chars, magic_len)))
 
 content += '}\n'
 
