@@ -1,0 +1,122 @@
+#!/usr/bin/env bash
+
+port=8091
+index_file='index.html'
+page403='<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title> 403 Forbidden </title>
+</head>
+<body>
+    <h1> 403 Forbidden </h1>
+    <p> You do not have permission to access this page </p>
+    <p> Our admin thinks that only he and his cat should have this permission </p>
+    <hr />
+    NANI web server, written with &lt;3
+</body>
+</html>
+'
+page404='<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title> 404 Not Found </title>
+</head>
+<body>
+    <h1> 404 Not Found </h1>
+    <p> The page you requested was not found </p>
+    <p> It either has never existed or has gone forever :( </p>
+    <hr />
+    NANI web server, written with &lt;3
+</body>
+</html>
+'
+page500='<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title> 500 Bad Request </title>
+</head>
+<body>
+    <h1> 500 Bad Request </h1>
+    <p> Your browser has sent a request that NANI does not know how to handle </p>
+    <p> Or maybe you are just another hacker? <!-- Yes, if you see this you definitely are --> </p>
+    <hr />
+    NANI web server, written with &lt;3
+</body>
+</html>
+'
+dir='.'
+
+while ! [ -z "$1" ]; do
+    case "$1" in
+        -p|--port)
+            port="$2"
+            shift
+            shift
+            ;;
+        -I|--index-file)
+            index_file="$2"
+            shift
+            shift
+            ;;
+        -d|--root-dir)
+            dir="$2"
+            shift
+            shift
+            ;;
+        *)
+            echo "Usage: $0 [-p port] [-I index_filename] [-d root_directory]"
+            exit 1
+    esac
+done
+
+ncat -vlkc 'dir='"'$dir'"'
+page403='"'$page403'"'
+page404='"'$page404'"'
+page500='"'$page500'"'
+index_file='"'$index_file'"'
+
+read method path version
+cd "$dir"
+echo Requested path: "$path" >&2
+
+if [[ $path/ =~ .*[.][.]/.* ]]; then
+    echo "HTTP/1.0 502 Bad Request"
+    echo "Content-Type: $(echo "$page500" | file -bi -)"
+    echo "Content-Length: $(echo "$page500" | wc -c)"
+    echo "X-Powered-By: NANI/1.0"
+    echo
+    echo "$page500"
+    exit
+fi
+
+if [ -d "./$path" ]; then
+    path="$path/$index_file"
+    echo "Appending index file: $path" >&2
+fi
+
+if [ -f "./$path" ]; then
+    echo "HTTP/1.0 200 OK"
+    echo "Content-Type: $(file -bi "./$path")"
+    echo "Content-Length: $(stat -c %s "./$path")"
+    echo "X-Powered-By: NANI/1.0"
+    echo
+    cat "./$path"
+else
+    echo "HTTP/1.0 404 Not Found"
+    echo "Content-Type: $(echo "$page404" | file -bi -)"
+    echo "Content-Length: $(echo "$page404" | wc -c)"
+    echo "X-Powered-By: NANI/1.0"
+    echo
+    echo "$page404"
+    exit
+fi
+' "$port"
