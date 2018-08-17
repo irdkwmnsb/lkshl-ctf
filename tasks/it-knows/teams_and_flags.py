@@ -1,0 +1,25 @@
+#!/usr/bin/env false
+# -*- coding: utf-8 -*-
+
+data = {
+    "team_1": "LKSHL{U5E_STR1NG5_UT1LITY_E1LY8tnzYM}",
+    "team_2": "LKSHL{U5E_STR1NG5_UT1LITY_sngdSKffJW}",
+    "team_3": "LKSHL{U5E_STR1NG5_UT1LITY_9TGwTyO2qP}",
+    "team_4": "LKSHL{U5E_STR1NG5_UT1LITY_mCxw9K7VrQ}",
+    "team_5": "LKSHL{U5E_STR1NG5_UT1LITY_9YQN00J9zg}",
+    "team_6": "LKSHL{U5E_STR1NG5_UT1LITY_wka7iELGHs}",
+    "team_7": "LKSHL{U5E_STR1NG5_UT1LITY_zW5AvtT7Ha}",
+    "team_8": "LKSHL{U5E_STR1NG5_UT1LITY_SDkUSlAmMD}",
+    "team_9": "LKSHL{U5E_STR1NG5_UT1LITY_C27pJWJPTr}",
+    "team_10": "LKSHL{U5E_STR1NG5_UT1LITY_JdPuv5CfAq}",
+    "team_11": "LKSHL{U5E_STR1NG5_UT1LITY_79koDG1bx4}",
+    "team_12": "LKSHL{U5E_STR1NG5_UT1LITY_Tdi04zn8CB}",
+    "team_13": "LKSHL{U5E_STR1NG5_UT1LITY_zpGqDsrTD6}",
+    "team_14": "LKSHL{U5E_STR1NG5_UT1LITY_MVUFy4CKsZ}",
+    "team_15": "LKSHL{U5E_STR1NG5_UT1LITY_WpynCSJl6y}",
+    "team_16": "LKSHL{U5E_STR1NG5_UT1LITY_8hK1oqx8ys}",
+    "team_17": "LKSHL{U5E_STR1NG5_UT1LITY_9r7WChm6vA}",
+    "team_18": "LKSHL{U5E_STR1NG5_UT1LITY_a1xMUpc9L4}",
+    "team_19": "LKSHL{U5E_STR1NG5_UT1LITY_ysEQWSxd9w}",
+    "team_20": "LKSHL{U5E_STR1NG5_UT1LITY_m9i54ZCK04}",
+}
