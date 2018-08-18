@@ -3,6 +3,9 @@ import argparse
 from itertools import count
 import os
 
+from tqdm import tqdm
+
+
 def make_flag(flag: str):
     from subprocess import check_output
     from hashlib import md5
@@ -27,14 +30,15 @@ if __name__ == "__main__":
     else:
         from flags_and_teams import data
 
-        for team_id, flag in data.items():
+        for team_id, flag in tqdm(data.items()):
             output[team_id] = make_flag(flag)
 
     if g.v:
         print(output)
     else:
-        if not os.path.exists(g.where):
-            os.makedirs(g.where)
-        for team_id, flag in output.items():
-            with open(os.path.join(g.where, str(team_id) + ".txt"), 'w', encoding="UTF-8") as f:
-                f.write(str(flag))
+        nd = dict()
+        for team_id, outp in output.items():
+            nd[team_id] = (outp, data[team_id])
+        with open(g.where, 'w+') as f:
+            f.write("data = ")
+            f.write(repr(nd))

@@ -15,7 +15,7 @@ def expand(template, team_num):
     return ''.join([rd.choice(chars) if c == '?' else c for c in s])
 
 magic_len = 10
-flag_template = 'LKSHL{{MD5_0F_TRRU3_1N_C0OK1E5_{magic}}}'
+flag_template = 'LKL{{MD5_0F_TRRU3_1N_C0OK1E5_{magic}}}'
 
 if len(sys.argv) < 2:
     print('Usage: gen_team_ids.py <teams_count> [team_id_template]')

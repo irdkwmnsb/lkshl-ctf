@@ -47,7 +47,7 @@ def main():
     if len(sys.argv) < 4:
         print('Usage: write_text.py <original_image> <text> <save_path>')
         return
-    font = load_font('UbuntuMono-R', 16)   # Нужно, чтобы UbuntuMono-R.ttf был в /usr/share/fonts/TTF
+    font = ImageFont.truetype('./UbuntuMono-R.ttf', 16)   # Нужно, чтобы UbuntuMono-R.ttf был в /usr/share/fonts/TTF
     imgpath = sys.argv[1]
     text = sys.argv[2]
     savepath = sys.argv[3]

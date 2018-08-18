@@ -9,3 +9,19 @@ tasks/youtube-subtitles/subtitles\.srt
 *.log
 
 tasks/printer/out/
+
+tasks/bassboosted/out/
+
+tasks/im-hiding/out/
+
+tasks/caesar/out/
+
+tasks/logo/out/
+
+tasks/qr/out/
+
+tasks/rsa/out\.py
+
+tasks/restore-usb/team1/
+
+tasks/strange-archive/out/

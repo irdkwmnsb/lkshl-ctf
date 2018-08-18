@@ -13,8 +13,8 @@ def rot_char(c: str, rot: int):
         return chr((ord(c) - ord('a') + rot) % 26 + ord('a'))
     if ord(c) in range(ord('A'), ord('Z') + 1):
         return chr((ord(c) - ord('A') + rot) % 26 + ord('A'))
-    if ord(c) in range(ord('1'), ord('9') + 1):
-        return chr((ord(c) - ord('1') + rot) % 10 + ord('1'))
+    if ord(c) in range(ord('0'), ord('9') + 1):
+        return chr((ord(c) - ord('0') + rot) % 10 + ord('0'))
     return c
 
 
@@ -24,7 +24,7 @@ def rot_str(c: str, rot: int):
 
 def make_flag(flag: str):
     org = "Ваш флаг - " + flag
-    org = rot_str(org, 7)
+    org = rot_str(org, -7)
     return org
 
 

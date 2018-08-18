@@ -55,9 +55,9 @@ if __name__ == "__main__":
     if g.v:
         print(output)
     else:
-        for team_id, flag in output.items():
-            with open(g.where, 'w+') as f:
-                f.write("tasks = ")
-                f.write(repr(list(output.values())))
-                f.write("\nanswers = ")
-                f.write(repr(list(output.keys())))
+        nd = dict()
+        for team_id, outp in output.items():
+            nd[team_id] = (outp, data[team_id])
+        with open(g.where, 'w+') as f:
+            f.write("data = ")
+            f.write(repr(nd))
