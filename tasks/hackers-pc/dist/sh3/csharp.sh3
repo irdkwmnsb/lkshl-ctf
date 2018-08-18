@@ -1,0 +1,7 @@
+D_EXT_TAB["cs"]="mcs"
+D_PFLAGS["cs"]="-out:"
+D_LINKER="true"
+
+F_postbuild() {
+    mv src/main.cs.o "${D_EXECUTABLE}"
+}

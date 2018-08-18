@@ -1,0 +1,272 @@
+#!/usr/bin/env bash
+
+set -e
+
+declare -Ag D_EXT_TAB
+declare -Ag D_FLAGS
+declare -Ag D_PFLAGS
+
+D_EXT_TAB["c"]="cc"
+D_EXT_TAB["cpp"]="c++"
+D_EXT_TAB["c++"]="c++"
+D_EXT_TAB["cc"]="c++"
+
+D_PFLAGS["c"]="-c -o "
+D_PFLAGS["cpp"]="-c -o "
+D_PFLAGS["c++"]="-c -o "
+D_PFLAGS["cc"]="-c -o "
+
+D_LINKER="c++"
+D_LINKPFLAGS="-o "
+D_LINKFLAGS=""
+
+declare -r VERSION="1.0_dev"
+if [[ -z "${SH3_NEST}" ]]; then
+    export SH3_NEST=0
+fi
+
+o_action=""
+o_install_path=""
+
+function log() {
+    for (( i = 0; i < ${SH3_NEST}; ++i )); do
+        echo -n "    "
+    done
+    echo "  -> $*"
+}
+
+function log_toplevel() {
+    for (( i = 0; i < ${SH3_NEST}; ++i )); do
+        echo -n "    "
+    done
+    echo $'\x1b[1m'"==> $*"$'\x1b[0m'
+}
+
+function log_progress() {
+    log "($2/$3) $1"
+}
+
+function show_help() {
+    echo "Usage: sh3 <action> [options]"
+    echo "Actions:"
+    echo "  build                   Build"
+    echo "  clean                   Clean up"
+    echo "  help                    Show this message and exit"
+    echo "  install <path>          Install binaries to <path>"
+    echo "  install_headers <path>  Install headers to <path>"
+    echo "  recurse <dir> <args>    Recursively run sh3 with <args> at <dir>"
+    echo "  version                 Show version and exit"
+}
+
+function show_version() {
+    echo "sh3 build system. Version ${VERSION}"
+}
+
+function parse_args() {
+    case "$1" in
+        build|help|version|clean)
+            o_action="$1"
+            ;;
+        install|install_headers)
+            o_action="$1"
+            o_install_path="$2"
+            ;;
+        recurse)
+            local dir="$2"
+            shift
+            shift
+            log "Recursively building in ${dir}"
+            cd "${dir}"
+            env -i SH3_NEST="$(( ${SH3_NEST} + 1 ))" PATH="${PATH}" "$(which sh3)" "$@"
+            ret="$?"
+            exit "${ret}"
+            ;;
+        *)
+            o_action="usage_error"
+            ;;
+    esac
+}
+
+function perform_action() {
+    case "${o_action}" in
+        build)
+            action_build
+            ;;
+        clean)
+            action_clean
+            ;;
+        help)
+            action_help
+            ;;
+        version)
+            action_version
+            ;;
+        install)
+            action_install
+            ;;
+        install_headers)
+            action_install_headers
+            ;;
+        *)
+            action_usage_error
+            ;;
+    esac
+}
+
+function action_build() {
+    unset BUILD_PROXY
+    load_modules
+    if [[ -n "${BUILD_PROXY}" ]]; then
+        unset BUILD_PROXY
+        F_build
+        return
+    fi
+
+    if [[ "$(type -t F_prebuild)" == "function" ]]; then
+        log_toplevel "Running pre-build actions"
+        F_prebuild
+    fi
+    if [[ "$(type -t F_depbuild)" == "function" ]]; then
+        log_toplevel "Building dependencies"
+        F_depbuild
+    fi
+
+    log_toplevel "Locating sources"
+    local sources=($(list_sources))
+    local n="${#sources[@]}"
+    local iter=1
+    local obj_files=""
+
+    incflags=""
+    for incdir in ${D_INCDIRS[@]}; do
+        incflags+=" -I${incdir}"
+    done
+
+    log_toplevel "Building"
+    for src in ${sources[@]}; do
+        log_progress "Building ${src}" "${iter}" "$n"
+        obj_files+=" ${src}.o"
+        build_file "${src}"
+        (( ++iter ))
+    done
+
+    log_toplevel "Linking"
+    link_files ${obj_files}
+    if [[ "$(type -t F_postbuild)" == "function" ]]; then
+        log_toplevel "Running post-build actions"
+        F_postbuild
+    fi
+}
+
+function build_file() {
+    local ext="${1/*./}"
+    local compiler="${D_EXT_TAB[${ext}]}"
+    local flags="${D_FLAGS[${ext}]} ${D_PFLAGS[${ext}]}"
+    "${compiler}" ${incflags} ${flags}"$1.o" "$1"
+}
+
+function link_files() {
+    "${D_LINKER}" ${D_LINKFLAGS} ${D_LINKPFLAGS}"${D_EXECUTABLE}" "$@"
+}
+
+function load_modules() {
+    shopt -s nullglob
+    for module in sh3/*.sh3; do
+        source "${module}"
+    done
+}
+
+function list_sources() {
+    find ${D_SOURCES} -regex ".*[.].*" | while read src; do
+        local ext="${src/*./}"
+        if [[ -n "${D_EXT_TAB[${ext}]}" ]]; then
+            echo "${src}"
+        fi
+    done
+}
+
+function action_usage_error() {
+    show_help
+    exit 1
+}
+
+function action_help() {
+    show_help
+    exit 0
+}
+
+function action_version() {
+    show_version
+    exit 0
+}
+
+function action_clean() {
+    load_modules
+
+    if [[ "$(type -t F_preclean)" == "function" ]]; then
+        log_toplevel "Running pre-clean actions"
+        F_preclean
+    fi
+
+    log_toplevel "Locating object files"
+    local sources=($(list_sources))
+    local obj_files=""
+    for src in ${sources[@]}; do
+        obj_files+=" ${src}.o"
+    done
+
+    log_toplevel "Removing object files"
+    for obj in ${obj_files[@]}; do
+        rm -f "${obj}"
+    done
+    log_toplevel "Removing binary"
+    rm -f "${D_EXECUTABLE}"
+    if [[ "$(type -t F_postclean)" == "function" ]]; then
+        log_toplevel "Running post-clean actions"
+        F_postclean
+    fi
+}
+
+function action_install_headers() {
+    load_modules
+    if [[ "$(type -t F_preinstallh)" == "function" ]]; then
+        log_toplevel "Running pre-header-install actions"
+        F_preinstallh
+    fi
+    log_toplevel "Installing headers"
+    local dirlist=(${D_INCDIRS})
+    local filelist=(${D_INCFILES})
+    local count="$(( ${#dirlist[@]} + ${#filelist[@]} ))"
+    local iter=1
+    for inc in ${D_INCFILES}; do
+        log_progress "Installing ${inc}" "${iter}" "${count}"
+        cp "${inc}" "${o_install_path}/"
+        (( ++iter ))
+    done
+    for inc in ${D_INCDIRS}; do
+        log_progress "Installing ${inc}" "${iter}" "${count}"
+        cp -r ${inc}/* "${o_install_path}/"
+        (( ++iter ))
+    done
+    if [[ "$(type -t F_postinstallh)" == "function" ]]; then
+        log_toplevel "Running post-header-install actions"
+        F_postinstallh
+    fi
+}
+
+function action_install() {
+    load_modules
+    if [[ "$(type -t F_postinstallh)" == "function" ]]; then
+        log_toplevel "Running pre-install actions"
+        F_preinstall
+    fi
+    log_toplevel "Installing ${D_EXECUTABLE}"
+    cp "${D_EXECUTABLE}" "${o_install_path}"
+    if [[ "$(type -t F_postinstall)" == "function" ]]; then
+        log_toplevel "Running post-install actions"
+        F_postinstall
+    fi
+}
+
+parse_args "$@"
+perform_action
