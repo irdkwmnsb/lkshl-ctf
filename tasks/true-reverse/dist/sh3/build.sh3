@@ -1,0 +1,3 @@
+D_EXECUTABLE=task
+D_SOURCES=(src)
+D_FLAGS[cpp]='-DENC_MESSAGE="@@__MESSAGE__@@"'
