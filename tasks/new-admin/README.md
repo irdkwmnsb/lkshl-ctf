@@ -4,8 +4,8 @@
 Не оставил ли старый админ какого-нибудь послания?
 
 Образ виртуальной машины:
-- [Зеркало 1](https://drive.google.com/open?id=1ZKaBj5v4Uc59VaeEa2ri1jc5m31-utAQ)
-- [Зеркало 2](https://cloud.mail.ru/public/MwEZ/xsjw3AuA6)
+- [Зеркало 1](https://drive.google.com/open?id=1Z3FNpUDGvrNxdGoROfOb4JtrKuLS-zYA)
+- [Зеркало 2](https://cloud.mail.ru/public/5Hxu/G63c9hsCx)
 
 Логин: admin, пароль: ctf
 
