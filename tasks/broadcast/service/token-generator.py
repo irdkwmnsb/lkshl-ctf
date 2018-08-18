@@ -3,8 +3,8 @@ import random
 import string
 
 
-random.seed("SCHOOL_QCTF_2018_BROADCAST")
-FLAG = "QCTF{{y0u_h4ve_13arnt_w3bs0cket_m4gic_{}}}"
+random.seed("LKL1_2018_BROADCAST")
+FLAG = "LKL{{y0u_h4ve_13arnt_w3bs0cket_m4gic_{}}}"
 ALPHABET = string.ascii_letters + string.digits
 
 
