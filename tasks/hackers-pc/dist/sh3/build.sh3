@@ -1,0 +1,3 @@
+D_SOURCES=src
+D_EXECUTABLE=task.exe
+D_FLAGS["cs"]="-optimize- -codepage:utf8"

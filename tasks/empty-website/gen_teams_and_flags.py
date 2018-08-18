@@ -10,7 +10,7 @@ def random_str(chars, length):
 
 chars = '1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM'
 magic_len = 10
-flag_template = 'LKSHL{{U5E_D1RBUST3R_{magic}}}'
+flag_template = 'LKL{{U5E_D1RBUST3R_{magic}}}'
 
 if len(sys.argv) < 2:
     print('Usage: gen_teams_and_flags.py <teams_count>')

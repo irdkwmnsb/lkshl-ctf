@@ -9,8 +9,8 @@ def random_str(chars, length):
     return ''.join([rd.choice(chars) for i in range(length)])
 
 chars = '1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM'
-magic_len = 10
-flag_template = 'LKSHL{{U5E_STR1NG5_UT1LITY_{magic}}}'
+magic_len = 12
+flag_template = 'LKL{{U5E_STR1NG5_UT1LITY_{magic}}}'
 
 if len(sys.argv) < 2:
     print('Usage: gen_teams_and_flags.py <teams_count>')
