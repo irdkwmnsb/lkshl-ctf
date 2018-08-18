@@ -1,4 +1,4 @@
-CREATE USER 'dbuser'@'%' IDENTIFIED BY 'zJ2plyhR9';
+CREATE USER 'dbuser'@'%' IDENTIFIED BY 'kjgeqwss';
 GRANT SELECT ON cpanel.* TO 'dbuser'@'%';
 FLUSH PRIVILEGES;
 
@@ -13,4 +13,4 @@ CREATE TABLE users (
   PRIMARY KEY (id)
 );
 
-INSERT INTO users VALUES (1, 'admin', 'f44ed65148ee6134c8c4360e17b0a45a');
+INSERT INTO users VALUES (1, 'admin', '09f9995c3a50bc2471bcc7aff49e668f');

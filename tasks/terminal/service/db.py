@@ -35,7 +35,7 @@ async def db_connect(loop):
         try:
             return await aiomysql.create_pool(
                 host='mysql',
-                user='dbuser', password='zJ2plyhR9', db='cpanel',
+                user='dbuser', password='kjgeqwss', db='cpanel',
                 charset='utf8mb4',
                 cursorclass=aiomysql.DictCursor,
                 loop=loop

@@ -64,7 +64,7 @@ def extract_index(cookie):
 
 
 def extract_flag_body(token):
-    return re.match('QCTF\{(\w+)+\}', flags[token]).group(1)
+    return re.match('LKL{(\w+)+\}', flags[token]).group(1)
 
 
 if __name__ == '__main__':

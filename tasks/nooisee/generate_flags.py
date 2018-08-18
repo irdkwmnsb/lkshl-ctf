@@ -6,12 +6,12 @@ import os.path
 
 
 ALPHA = digits + ascii_letters
-NUMBER_OF_TEAMS = 40
+NUMBER_OF_TEAMS = 200
 
 if __name__ == "__main__":
     seed(0x80085)
-    ids = [x for x in range(NUMBER_OF_TEAMS)]
-    flags = ['MAGIC{{g00D_N0isss3_{}}}'.format(''.join(choice(ALPHA) for _ in range(6))) for x in range(NUMBER_OF_TEAMS)]
+    ids = [''.join(choice(ALPHA) for _ in range(20)) for x in range(NUMBER_OF_TEAMS)]
+    flags = ['LKL{{g00D_N0isss3_{}}}'.format(''.join(choice(ALPHA) for _ in range(6))) for x in range(NUMBER_OF_TEAMS)]
     with open(os.path.join('flask','ids_and_flags.py'), 'w') as f:
         f.write('ids = {}\n'.format(repr(ids)))
         f.write('flags = {}'.format(repr(flags)))

@@ -6,7 +6,7 @@ import random
 from string import ascii_uppercase, ascii_lowercase, digits
 from hashlib import md5
 from argparse import ArgumentParser
-from Crypto.Util.number import bytes_to_long
+from Cryptodome.Util.number import bytes_to_long
 
 
 ALPHABET = ascii_lowercase + ascii_uppercase + digits

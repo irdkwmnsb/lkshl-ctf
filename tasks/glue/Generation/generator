@@ -1,6 +1,5 @@
 #!/bin/bash
 #For generation: ./generator QCTF{**************************} password_for_archive
-
 password=$2
 echo -n $password > flag
 gzip flag

@@ -18,7 +18,7 @@ def get_rand_text():
 
 if __name__ == '__main__':
     flags = {get_rand_uuid(): FLAG.format(get_rand_text()) for _ in range(500)}
-    with open("flags.py", mode="w") as flags_file:
+    with open("flags_and_teams.py", mode="w") as flags_file:
         flags_file.writelines([
             "FLAGS = {\n",
             *["    \"{}\": \"{}\",\n".format(key, flags[key]) for key in sorted(flags)],

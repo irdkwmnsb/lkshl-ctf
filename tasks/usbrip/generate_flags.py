@@ -4,7 +4,7 @@ import string
 import json
 
 ALPHABET=string.ascii_letters+string.digits
-FLAG_PREFIX='QCTF{s0_uSB_'
+FLAG_PREFIX='LKL{s0_uSB_'
 
 def parse_args():
     parser = argparse.ArgumentParser(prog='generate_flags.py', description='Generates flags for teams')

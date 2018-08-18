@@ -1,4 +1,4 @@
-flags = {
+data = {
     'bf5c9a55c1c8c56445aeecc1fd4dd0c5': 'QCTF{m1gh7_b3_th3_loo0ng35t_fLag_y0u_hav3_Ever_s33N_0FYMt}',
     '04659067a38f91a89b5769aec890d3fe': 'QCTF{m1gh7_b3_th3_loo0ng35t_fLag_y0u_hav3_Ever_s33N_Yk0R0}',
     '7deedf7ecce0c609ebcd57b37b0fdbf7': 'QCTF{m1gh7_b3_th3_loo0ng35t_fLag_y0u_hav3_Ever_s33N_5qzo2}',

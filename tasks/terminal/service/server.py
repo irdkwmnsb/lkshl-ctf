@@ -8,7 +8,7 @@ from aiohttp import web
 from aiohttp_jinja2 import setup as jinja_setup, render_template
 from db import db_connect, find_user, SecurityException, DbException
 
-from flags import task_ids, flags
+from flags_and_teams import task_ids, flags
 
 
 def generate_token():
