@@ -1,7 +1,7 @@
 version: '2'
 services:
-  a-plus-b:
+  empty-website:
     build: ./
     restart: always
     ports:
-     - "127.0.0.1:30001:71"
+     - "0.0.0.0:30001:81"
