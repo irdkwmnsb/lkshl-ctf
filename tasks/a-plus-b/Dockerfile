@@ -2,14 +2,13 @@ FROM python:3.7
 
 ENV PYTHONUNBUFFERED 1
 
-RUN mkdir -p /service/
-WORKDIR /service/
+WORKDIR /usr/src/app
 
-COPY ./requirements.txt /service/
-RUN pip install --no-cache-dir -r ./requirements.txt
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
 
-COPY ./ ./
+COPY . .
+
+CMD [ "python", "./serve.py", "71" ]
 
 EXPOSE 71
-
-CMD ["./serve.py", "71"]
