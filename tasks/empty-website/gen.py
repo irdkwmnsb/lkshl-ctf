@@ -26,18 +26,28 @@ def sh(*args, sudo=False, env=True, fatal=True):
 def get_team_id(n):
     with open('team_ids.txt') as f:
         return f.read().split('\n')[n-1]
-
+        
 def main():
     if len(sys.argv) < 2:
-        print('Usage: gen.py <team_id>')
+        print('Usage: gen.py <NUM_TEAMS>')
         return
 
-    # Prepare magic and flag
-    team_id = int(sys.argv[1])
-    flag = teams_and_flags.data[get_team_id(team_id)]
+    n = int(sys.argv[1])
 
-    sh('cp', '-r', 'webroot', 'webroot_team' + str(team_id))
-    sh('sed', '-i', 's/@@_FLAG_@@/{}/g'.format(flag), 'webroot_team{}/admin/X9k2dLIA/index.html'.format(team_id))
+    # Prepare magic and flag
+    for i in range(n):
+        team_id = get_team_id(i + 1)
+        print('({}/{}) Generating subdir for team with id {}'.format(i + 1, n, team_id))
+        flag = teams_and_flags.data[team_id]
+
+        try:
+            os.stat(team_id)
+            sh('rm', '-rf', team_id)
+        except FileNotFoundError:
+            pass
+
+        sh('cp', '-r', 'webroot', team_id)
+        sh('sed', '-i', 's/@@_FLAG_@@/{}/g'.format(flag), team_id + '/admin/X9k2dLIA/index.html')
 
     print('Done')
 
