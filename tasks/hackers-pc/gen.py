@@ -2,6 +2,9 @@
 # -*- coding: utf-8 -*-
 
 import sys
+
+from tqdm import tqdm
+
 import teams_and_flags
 import os
 import subprocess as sp
@@ -39,34 +42,26 @@ def get_team_id(n):
         return f.read().split('\n')[n-1]
 
 def main():
-    if len(sys.argv) < 2:
-        print('Usage: gen.py <team_id>')
-        return
+    for team_id, flag in tqdm(teams_and_flags.data.items()):
+        # Prepare directory
+        sh('cp', '-r', '--no-target-directory', 'dist/', 'team_' + team_id)
+        os.chdir('team_' + team_id)
 
-    # Prepare magic and flag
-    team_no = int(sys.argv[1])
-    team_id = get_team_id(team_no)
-    flag = teams_and_flags.data[team_id]
+        # Generate source code
+        with open('templates/main.cs') as file:
+            s = file.read()
+        s = s.replace('@@_PERMITTED_KEY_@@', array_to_csv(encrypt(flag)))
+        with open('src/main.cs', 'w') as file:
+            file.write(s)
 
-    # Prepare directory
-    sh('cp', '-r', '--no-target-directory', 'dist/', 'team_' + team_id)
-    os.chdir('team_' + team_id)
+        # Compile source code
+        sh('../bin/sh3', 'build', env=False)
 
-    # Generate source code
-    with open('templates/main.cs') as file:
-        s = file.read()
-    s = s.replace('@@_PERMITTED_KEY_@@', array_to_csv(encrypt(flag)))
-    with open('src/main.cs', 'w') as file:
-        file.write(s)
-
-    # Compile source code
-    sh('../bin/sh3', 'build', env=False)
-
-    # Clean up
-    sh('cp', 'task.exe', '../task_{}.exe'.format(team_id))
-    os.chdir('..')
-    sh('rm', '-rf', 'team_' + team_id)
-    print('Done')
+        # Clean up
+        sh('cp', 'task.exe', '../out/{}.exe'.format(team_id))
+        os.chdir('..')
+        sh('rm', '-rf', 'team_' + team_id)
+        print('Done')
 
 
     print('Done')

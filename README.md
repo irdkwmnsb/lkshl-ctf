@@ -27,10 +27,10 @@ DAG - Done And Generated
 code-lock | lighthttpd | ND
 empty-website | Nginx | ND
 **glue** | Text | DAG
-hackers-pc | File | Not Ready
+**hackers-pc** | File | DAG
 **hexandxor** | Text | DAG
 **im-hiding** | File | DAG
-it-knows | File | Not Ready
+**it-knows** | File | DAG
 **logo** | File | DAG
 **minecraft** | File | DAG
 new-admin | File | DAG
@@ -41,7 +41,7 @@ new-admin | File | DAG
 restore-usb | File | Not ready
 rsa | Text | DAG
 **strange-archive** | File | DAG
-true-reverse | File | Not ready
+**true-reverse** | File | DAG
 **terminal** | Nginx | RTL
 **usbrip** | File | DAG
 **xortop** | Text | DAG
