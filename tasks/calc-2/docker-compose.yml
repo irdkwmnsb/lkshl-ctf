@@ -1,0 +1,7 @@
+version: '2'
+services:
+  calc-2:
+    build: ./
+    restart: always
+    ports:
+     - "127.0.0.1:30003:73"
