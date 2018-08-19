@@ -56,7 +56,7 @@ def main():
     with open('templates/main.cs') as file:
         s = file.read()
     s = s.replace('@@_PERMITTED_KEY_@@', array_to_csv(encrypt(flag)))
-    with open('src/main.cs', 'w+') as file:
+    with open('src/main.cs', 'w') as file:
         file.write(s)
 
     # Compile source code

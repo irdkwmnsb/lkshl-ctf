@@ -8,7 +8,10 @@ from PIL import Image
 import numpy as np
 
 
-def make_pic(flag):
+def make_pic(data) -> Tuple[str, Image.Image]:
+    team = data[0]
+    flag = data[1]
+
     bits = ''.join('{0:08b}'.format(ord(x), 'b') for x in flag)
     ar = np.array(Image.open("org.bmp"))
     ar = np.rot90(ar)
@@ -35,7 +38,7 @@ def make_pic(flag):
 
     img = Image.alpha_composite(white2, img)
     img = img.convert("L")
-    return img
+    return team, img
 
 
 where = "./out"
@@ -45,11 +48,12 @@ def initializer(*_where: str) -> None:
     global where
     where = ''.join(_where)
 
-def make_and_save(data: Tuple[str,str]):
+
+def save(data) -> None:
     team = data[0]
-    flag = data[1]
-    p = make_pic(flag)
-    p.save(os.path.join(where, str(team) + ".jpg"))
+    img = data[1]
+    img.save(os.path.join(where, str(team) + ".jpg"))
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Make dem tasks")
@@ -76,7 +80,7 @@ if __name__ == "__main__":
         pool = Pool(5, initializer=initializer, initargs=(g.where))
         if not os.path.exists(g.where):
             os.makedirs(g.where)
-        pool.map(make_and_save, list(data.items()))
+        pool.map(save, pool.map(make_pic, list(data.items())))
         exit(0)
 
     elif g.from_file:

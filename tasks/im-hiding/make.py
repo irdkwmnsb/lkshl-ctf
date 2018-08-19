@@ -3,8 +3,6 @@ import argparse
 from itertools import count
 import os
 
-from tqdm import tqdm
-
 BIN = {"0": "\u200B",
        "1": "\uFEFF"}
 
@@ -36,7 +34,7 @@ if __name__ == "__main__":
             output[i] = make_flag(flag)
     else:
         from flags_and_teams import data
-        for team_id, flag in tqdm(data.items()):
+        for team_id, flag in data.items():
             output[team_id] = make_flag(flag)
 
     if g.v:
