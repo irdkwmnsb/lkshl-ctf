@@ -1,14 +1,11 @@
-FROM python:3.7
-
-ENV PYTHONUNBUFFERED 1
-
-WORKDIR /usr/src/app
-
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
-
-COPY . .
-
-CMD [ "python", "./serve.py", "71" ]
-
-EXPOSE 80
+FROM base/archlinux
+WORKDIR /usr
+ADD out /srv/http
+ADD lighttpd.conf /lighty.conf
+RUN [ "pacman", "-Sy", "--noconfirm" ]
+RUN [ "pacman", "-S", "lighttpd", "php-cgi", "--noconfirm" ]
+# RUN [ "groupadd", "http" ]
+# RUN [ "useradd", "http", "-g", "http" ]
+RUN [ "chown", "http:http", "-R", "/srv/http" ]
+CMD [ "bash", "-c", "rm -f /var/run/lighttpd/lighttpd-angel.pid; lighttpd -Df /lighty.conf" ]
+EXPOSE 81

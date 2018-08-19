@@ -29,6 +29,8 @@ def get_team_id(n):
 
 def main():
     # Prepare magic and flag
+    sh('rm', '-rf', 'out')
+    sh('mkdir', '-p', 'out')
     for team_id, flag in teams_and_flags.data.items():
         sh('cp', '-r', 'webroot', './out/' + str(team_id))
         sh('sed', '-i', 's/@@_FLAG_@@/{}/g'.format(flag), './out/{}/admin/X9k2dLIA/index.html'.format(team_id))
