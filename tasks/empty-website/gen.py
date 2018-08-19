@@ -28,16 +28,10 @@ def get_team_id(n):
         return f.read().split('\n')[n-1]
 
 def main():
-    if len(sys.argv) < 2:
-        print('Usage: gen.py <team_id>')
-        return
-
     # Prepare magic and flag
-    team_id = int(sys.argv[1])
-    flag = teams_and_flags.data[get_team_id(team_id)]
-
-    sh('cp', '-r', 'webroot', 'webroot_team' + str(team_id))
-    sh('sed', '-i', 's/@@_FLAG_@@/{}/g'.format(flag), 'webroot_team{}/admin/X9k2dLIA/index.html'.format(team_id))
+    for team_id, flag in teams_and_flags.data.items():
+        sh('cp', '-r', 'webroot', './out/' + str(team_id))
+        sh('sed', '-i', 's/@@_FLAG_@@/{}/g'.format(flag), './out/{}/admin/X9k2dLIA/index.html'.format(team_id))
 
     print('Done')
 

@@ -1,0 +1,7 @@
+version: '2'
+services:
+  a-plus-b:
+    build: ./
+    restart: always
+    ports:
+     - "127.0.0.1:30004:"
