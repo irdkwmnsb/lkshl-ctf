@@ -4,4 +4,4 @@ services:
     build: ./
     restart: always
     ports:
-     - "127.0.0.1:30003:73"
+     - "50003:73"
