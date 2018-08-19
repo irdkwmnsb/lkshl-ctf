@@ -14,8 +14,11 @@
         } else {
             if ($_COOKIE['access_code_md5'] === md5('true')) {
                 echo "Access Granted. The flag is $flag";
+            } else {
+                setcookie('access_code_md5', md5('false'));
+                echo 'Access Denied';
             }
-        }
+        } 
     ?>
     </h1>
 </body>

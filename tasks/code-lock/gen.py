@@ -30,19 +30,16 @@ def get_team_num(n):
         return f.read().split('\n')[n-1]
 
 def main():
-    if len(sys.argv) < 2:
-        print('Usage: gen.py <team_num>')
-        return
-
+    sh('rm', '-rf', 'out')
+    sh('mkdir', '-p', 'out')
     # Prepare magic and flag
-    team_num = int(sys.argv[1])
-    flag = teams_and_flags.data[get_team_num(team_num)]
+    for team_id, flag in teams_and_flags.data.items():
+        sh('cp', '-r', 'wsroot', 'out/' + team_id)
+        sh('sed', '-i', 's/@@_FLAG_@@/{}/g'.format(flag), 'out/{}/flag.php'.format(team_id))
 
-    sh('cp', '-r', 'wsroot', 'team' + str(team_num))
-    sh('sed', '-i', 's/@@_FLAG_@@/{}/g'.format(flag), 'team{}/flag.php'.format(team_num))
-    sh('cp', 'lighttpd.conf', 'lighty_team{}.conf'.format(team_num))
-    sh('sed', '-i', 's/@@_PORT_@@/{}/g'.format(BASE_PORT + team_num), 'lighty_team{}.conf'.format(team_num))
-    sh('sed', '-i', 's#@@_ROOT_@@#{}#g'.format(os.path.join(os.getcwd(), 'team' + str(team_num))), 'lighty_team{}.conf'.format(team_num))
+    #sh('cp', 'lighttpd.conf', 'lighty_team{}.conf'.format(team_num))
+    #sh('sed', '-i', 's/@@_PORT_@@/{}/g'.format(BASE_PORT + team_num), 'lighty_team{}.conf'.format(team_num))
+    #sh('sed', '-i', 's#@@_ROOT_@@#{}#g'.format(os.path.join(os.getcwd(), 'team' + str(team_num))), 'lighty_team{}.conf'.format(team_num))
 
     print('Done')
 

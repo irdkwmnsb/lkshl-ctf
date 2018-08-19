@@ -1,0 +1,7 @@
+version: '2'
+services:
+  code-lock:
+    build: ./
+    restart: always
+    ports:
+     - "0.0.0.0:30002:81"
