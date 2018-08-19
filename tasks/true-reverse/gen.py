@@ -2,6 +2,9 @@
 # -*- coding: utf-8 -*-
 
 import sys
+
+from tqdm import tqdm
+
 import teams_and_flags
 import os
 import subprocess as sp
@@ -49,62 +52,54 @@ def encrypt(s):
     return str(bytes([i ^ 0xFF for i in bytes(s, 'utf-8')]))[2:-1]
 
 def main():
-    if len(sys.argv) < 2:
-        print('Usage: gen.py <team_id>')
-        return
+    for team_id, flag in tqdm(teams_and_flags.data.items()):
+        # Prepare directory
+        try:
+            os.stat('team_' + team_id)
+            sh('rm', '-rf', 'team_' + team_id)
+        except FileNotFoundError:
+            pass
+        sh('cp', '-r', '--no-target-directory', 'dist/', 'team_' + team_id)
+        os.chdir('team_' + team_id)
 
-    # Prepare magic and flag
-    team_no = int(sys.argv[1])
-    team_id = get_team_id(team_no)
-    flag = teams_and_flags.data[team_id]
+        # EXECUTABLE 1
 
-    # Prepare directory
-    try:
-        os.stat('team_' + team_id)
+        # Generate source code
+        with open('sh3/build.sh3') as file:
+            s = file.read()
+        s = s.replace('@@__MESSAGE__@@', encrypt('There are no flags here...'))
+        with open('sh3/build.sh3', 'w') as file:
+            file.write(s)
+
+        # Compile source code
+        sh('../bin/sh3', 'build', env=False)
+
+        # Clean up
+        sh('cp', 'task', 'task1')
+
+        # EXECUTABLE 2
+
+        # Generate source code
+        with open('sh3/build.sh3') as file:
+            s = file.read()
+        s = s.replace(encrypt('There are no flags here...'), encrypt(flag))
+        with open('sh3/build.sh3', 'w') as file:
+            file.write(s)
+
+        # Compile source code
+        sh('../bin/sh3', 'build', env=False)
+
+        # Clean up
+        sh('cp', 'task', 'task2')
+
+        # COMBINE
+        reverse('task2')
+        cat('task1', 'task2', 'task')
+
+        sh('cp', 'task', '../out/' + team_id)
+        os.chdir('..')
         sh('rm', '-rf', 'team_' + team_id)
-    except FileNotFoundError:
-        pass
-    sh('cp', '-r', '--no-target-directory', 'dist/', 'team_' + team_id)
-    os.chdir('team_' + team_id)
-
-    # EXECUTABLE 1
-
-    # Generate source code
-    with open('sh3/build.sh3') as file:
-        s = file.read()
-    s = s.replace('@@__MESSAGE__@@', encrypt('There are no flags here...'))
-    with open('sh3/build.sh3', 'w') as file:
-        file.write(s)
-
-    # Compile source code
-    sh('../bin/sh3', 'build', env=False)
-
-    # Clean up
-    sh('cp', 'task', 'task1')
-
-    # EXECUTABLE 2
-
-    # Generate source code
-    with open('sh3/build.sh3') as file:
-        s = file.read()
-    s = s.replace(encrypt('There are no flags here...'), encrypt(flag))
-    with open('sh3/build.sh3', 'w') as file:
-        file.write(s)
-
-    # Compile source code
-    sh('../bin/sh3', 'build', env=False)
-
-    # Clean up
-    sh('cp', 'task', 'task2')
-
-    # COMBINE
-    reverse('task2')
-    cat('task1', 'task2', 'task')
-
-    sh('cp', 'task', '../task_' + team_id)
-    os.chdir('..')
-    sh('rm', '-rf', 'team_' + team_id)
-    print('Done')
+        print('Done')
 
 if __name__ == '__main__':
     main()
