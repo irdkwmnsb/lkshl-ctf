@@ -38,8 +38,8 @@ new-admin | File | DAG
 **printer** | File | DAG
 **qr** | File | DAG
 **red-button** | Nginx | RTL
-restore-usb | File | Not ready
-rsa | Text | DAG
+**restore-usb** | File | DAG /home/super/out
+**rsa** | Text | DAG
 **strange-archive** | File | DAG
 **true-reverse** | File | DAG
 **terminal** | Nginx | RTL
