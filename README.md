@@ -42,6 +42,7 @@ new-admin | File | DAG
 restore-usb | File | Not ready
 rsa | Text | DAG
 **strange-archive** | File | DAG
+true-reverse | File | Not ready
 **terminal** | Nginx | RTL
 **usbrip** | File | DAG
 **xortop** | Text | DAG
