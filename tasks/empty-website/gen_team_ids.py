@@ -14,9 +14,6 @@ def expand(template, team_num):
     s = template.replace('#', str(team_num))
     return ''.join([rd.choice(chars) if c == '?' else c for c in s])
 
-magic_len = 10
-flag_template = 'LKSHL{{MD5_0F_TRRU3_1N_C0OK1E5_{magic}}}'
-
 if len(sys.argv) < 2:
     print('Usage: gen_team_ids.py <teams_count> [team_id_template]')
     print('Generates new team_ids.txt file')

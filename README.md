@@ -25,7 +25,7 @@ DAG - Done And Generated
 **calc-1** | Service | RTL
 **calc-2** | Service | RTL
 code-lock | lighthttpd | ND
-empty-website | Unknown
+empty-website | Nginx | ND
 **glue** | Text | DAG
 hackers-pc | File | Not Ready
 **hexandxor** | Text | DAG
