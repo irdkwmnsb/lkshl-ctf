@@ -16,14 +16,14 @@ DAG - Done And Generated
 
 Название|Тип задания|Готовность
  ------ | --------- | -------- 
-a-plus-b | Service | ND
+**a-plus-b** | Service | RTL
 **bassboosted** | File | DAG 
 **blind-robot** | Nginx | RTL
 **broadcast** | Nginx | RTL
 **brute-zip** | Text | DAG
 **caesar** | File | DAG
-calc-1 | Service | ND
-calc-2 | Service | ND
+**calc-1** | Service | RTL
+**calc-2** | Service | RTL
 code-lock | lighthttpd | ND
 empty-website | Unknown
 **glue** | Text | DAG

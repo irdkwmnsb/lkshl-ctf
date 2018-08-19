@@ -1,7 +1,7 @@
 version: '2'
 services:
-  a-plus-b:
+  calc-2:
     build: ./
     restart: always
     ports:
-     - "50001:71"
+     - "50003:73"
