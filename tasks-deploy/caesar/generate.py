@@ -1,7 +1,7 @@
 TITLE = "Салат такой есть"
 STATEMENT_TEMPLATE = '''
 Из древнего Рима пришло сообщение. Расшифруйте его.  
-[message.txt](/static/files/n87x54wm/{0}.txt)
+[message.txt](/static/n87x54wm/{0}.txt)
 '''
 
 def generate(context):
