@@ -1,7 +1,6 @@
 SERVICE_ADDR = "a-plus-b.sicamp.ru 50001"
-
 TITLE = "A + B"
-STATEMENT_TEMPLATE = '''
+STATEMENT_TEMPLATE = f'''
 Это задание было создано с целью познакомить вас с тем, как будут работать задания ppc.
 Напишите в терминале nc {SERVICE_ADDR}
 Если вдруг у вас по каким то причинам Windows установите программу NetCat
