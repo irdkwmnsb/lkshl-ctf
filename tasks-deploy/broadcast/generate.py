@@ -1,6 +1,6 @@
 TITLE = "Опять Пэшечки"
 STATEMENT_TEMPLATE = '''
-Зайдя в свой любимый корпус, на двери вы замечаете бумажку. На ней написано [broadcast.ctf.sicamp.ru/{0}](broadcast.ctf.sicamp.ru/{0})
+Зайдя в свой любимый корпус, на двери вы замечаете бумажку. На ней написано [http://broadcast.ctf.sicamp.ru/{0}](http://broadcast.ctf.sicamp.ru/{0})
 
 Вы бы даже не стали бы заходить на этот сайт, небудь это заданием на LKLCTF.
 '''

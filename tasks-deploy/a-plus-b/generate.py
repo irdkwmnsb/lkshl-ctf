@@ -1,12 +1,11 @@
 SERVICE_ADDR = "a-plus-b.sicamp.ru 50001"
 
 TITLE = "A + B"
-STATEMENT_TEMPLATE = f'''
+STATEMENT_TEMPLATE = '''
 Это задание было создано с целью познакомить вас с тем, как будут работать задания ppc.
 Напишите в терминале nc {SERVICE_ADDR}
 Если вдруг у вас по каким то причинам Windows установите программу NetCat
-Ваш team_id - {{0}}. Используйте его при первом обращении к сервису.
-'''
+Ваш team_id - {{0}}. Используйте его при первом обращении к сервису. '''
 
 def generate(context):
     participant = context['participant']

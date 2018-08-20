@@ -2,7 +2,7 @@ TITLE = "Шахта ремесло"
 STATEMENT_TEMPLATE = '''
 https://www.youtube.com/watch?v=dANKqxonWsk
 
-[LKLCTF.rar](ctf.sicamp.ru/static/files/LKLCTF.rar)
+[LKLCTF.rar](http://ctf.sicamp.ru/static/files/LKLCTF.rar)
 '''
 
 def generate(context):

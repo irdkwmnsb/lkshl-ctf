@@ -1,6 +1,6 @@
 TITLE = "Красная кнопка"
 STATEMENT_TEMPLATE = '''
-[red-button.ctf.sicamp.ru/{0}](red-button.ctf.sicamp.ru/{0})
+[http://red-button.ctf.sicamp.ru/{0}](http://red-button.ctf.sicamp.ru/{0})
 '''
 
 def generate(context):

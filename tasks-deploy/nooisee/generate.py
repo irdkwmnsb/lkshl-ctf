@@ -2,7 +2,7 @@ TITLE = "Не шум(и)"
 STATEMENT_TEMPLATE = '''
 Мы наткнулись на интересный <s>шум</s>. Разгадайте что это, в конце-то концов.
 
-[nooisee.ctf.sicamp.ru/{0}](nooisee.ctf.sicamp.ru/{0})
+[http://nooisee.ctf.sicamp.ru/{0}](http://nooisee.ctf.sicamp.ru/{0})
 '''
 
 def generate(context):

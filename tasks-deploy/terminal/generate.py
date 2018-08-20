@@ -1,6 +1,6 @@
 TITLE = "Some Quick Luck"
 STATEMENT_TEMPLATE = '''
-[terminal.ctf.sicamp.ru/{0}](terminal.ctf.sicamp.ru/{0})
+[terminal.ctf.sicamp.ru/{0}](http://terminal.ctf.sicamp.ru/{0})
 '''
 
 def generate(context):

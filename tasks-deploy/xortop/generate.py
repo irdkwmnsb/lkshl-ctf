@@ -1,6 +1,6 @@
 TITLE = "Xor - топ"
 STATEMENT_TEMPLATE = '''
-Дан код, шифрующий флаг, и результат его работы. Получите флаг.
+Дан код, шифрующий флаг, и результат его работы. Получите флаг.  
 `
 with open("output.txt", "w") as f:
     key = 0 # some x 0<x<256
@@ -12,7 +12,7 @@ with open("output.txt", "w") as f:
     print(" ".join(str(e) for e in encrypted_flag), file=f)
 `
 
-stdout:
+stdout:  
 `{0}`
 '''
 

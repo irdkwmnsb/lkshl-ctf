@@ -2,7 +2,7 @@ TITLE = "Странный архив"
 STATEMENT_TEMPLATE = '''
 Мы получили по почте этот архив. Посмотрите, есть ли в нём что-нибудь интересное.
 
-[file.zip](ctf.sicamp.ru/static/files/o8weyxsgn/{0}.zip)
+[file.zip](http://ctf.sicamp.ru/static/files/o8weyxsgn/{0}.zip)
 '''
 
 def generate(context):

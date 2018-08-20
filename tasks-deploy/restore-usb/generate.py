@@ -1,7 +1,7 @@
 TITLE = "Служба восстановления данных"
 STATEMENT_TEMPLATE = '''
 В службу восстановления данных с флешек и дисков обратился клиент. Он принёс эту флешку. Говорит, что случайно её отформатировал. Посмотрите, что здесь можно сделать.
-(usb.img.tar.gz)[ctf.sicamp.ru/static/files/xn9gwqz3/{0}.tar.gz]
+(usb.img.tar.gz)[http://ctf.sicamp.ru/static/files/xn9gwqz3/{0}.tar.gz]
 '''
 
 def generate(context):
