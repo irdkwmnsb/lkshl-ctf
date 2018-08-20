@@ -2,7 +2,7 @@ from sanic import Sanic, response
 import asyncio
 from hashlib import sha1
 
-from flags_and_teams import data as TOKENS
+from flags_and_teams import FLAGS as TOKENS
 
 app = Sanic(__name__)
 app.static('/static', './static')
