@@ -24,7 +24,6 @@ task_set: !TaskSet
   - tasks-deploy/calc-1/task.yml
   - tasks-deploy/calc-2/task.yml
   - tasks-deploy/code-lock/task.yml
-  - tasks-deploy/contest.yml
   - tasks-deploy/empty-website/task.yml
   - tasks-deploy/glue/task.yml
   - tasks-deploy/hackers-pc/task.yml
@@ -46,4 +45,4 @@ task_set: !TaskSet
   - tasks-deploy/usbrip/task.yml
   - tasks-deploy/xortop/task.yml
   - tasks-deploy/youtube-subtitles/task.yml
-  - tasks-deploy/_template/task.yml
+
