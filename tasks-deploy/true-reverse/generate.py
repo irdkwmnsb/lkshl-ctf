@@ -2,7 +2,7 @@ TITLE = "True reverse"
 STATEMENT_TEMPLATE = '''
 Только истинные мастера (нет) решения тасков в категории reverse смогут получить этот флаг
 
-[file](http://ctf.sicamp.ru/static/files/93ynz9saa/{0})
+[file](http://ctf.sicamp.ru/static/93ynz9saa/{0})
 '''
 
 def generate(context):

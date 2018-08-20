@@ -2,7 +2,7 @@ TITLE = "Она знает..."
 STATEMENT_TEMPLATE = '''
 Эта программа точно знает флаг, хоть и не хочет нам его говорить
 
-[program](http://ctf.sicamp.ru/static/files/x7n3g9m89/{0})
+[program](http://ctf.sicamp.ru/static/x7n3g9m89/{0})
 '''
 
 def generate(context):

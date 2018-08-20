@@ -1,7 +1,7 @@
 TITLE = "BASSBOOSTED"
 STATEMENT_TEMPLATE = '''
 Вы знаете что такое BASSBOOSTED? Да? Мне вас жаль. Что-ж, вам нужно сделать DETSOOBSSAB. Тогда вы получите флаг.
-[audio.wav](/static/files/kljhsafd/{0}.wav)
+[audio.wav](/static/kljhsafd/{0}.wav)
 '''
 
 def generate(context):

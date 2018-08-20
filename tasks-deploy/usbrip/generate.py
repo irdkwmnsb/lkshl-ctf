@@ -2,7 +2,7 @@ TITLE = "Сервак"
 STATEMENT_TEMPLATE = '''
 Перед увольнением из фирмы ты скопировал все логи со всех серверов на флешку и забрал их с собой. Какого было твоё удивление, когда ты насчитал на 1 лог больше, чем количество серверов. Разберитесь в чём дело.
 
-[log.log](http://ctf.sicamp.ru/static/files/zq8wmxfhzqw/{0}.log)
+[log.log](http://ctf.sicamp.ru/static/zq8wmxfhzqw/{0}.log)
 '''
 
 def generate(context):

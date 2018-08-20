@@ -2,7 +2,7 @@ TITLE = "Лого ЛКЛ"
 STATEMENT_TEMPLATE = '''
 Ты видел лого ЛКЛ? Мне кажется, с ним что-то не так…
 
-[logo.bmp](http://ctf.sicamp.ru/static/files/9nx8wgreq/{0}.bmp)
+[logo.bmp](http://ctf.sicamp.ru/static/9nx8wgreq/{0}.bmp)
 '''
 
 def generate(context):

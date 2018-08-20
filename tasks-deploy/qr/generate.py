@@ -2,7 +2,7 @@ TITLE = "Ку ар?"
 STATEMENT_TEMPLATE = '''
 Это QR код. Получите его содержимое любой ценой.
 
-[qr.bmp](http://ctf.sicamp.ru/static/files/xm9qwzt/{0})
+[qr.bmp](http://ctf.sicamp.ru/static/xm9qwzt/{0})
 '''
 
 def generate(context):

@@ -1,7 +1,7 @@
 TITLE = "Я прячусь"
 STATEMENT_TEMPLATE = '''
 Этот флаг весьма стеснительный, найдите его.
-[flag.txt](http://ctf.sicamp.ru/static/files/0zm282aa/{0}.txt)
+[flag.txt](http://ctf.sicamp.ru/static/0zm282aa/{0}.txt)
 '''
 
 def generate(context):
