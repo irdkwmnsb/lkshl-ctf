@@ -1,8 +1,13 @@
-TITLE = "Название задания"
+TITLE = "Сервак"
 STATEMENT_TEMPLATE = '''
+Перед увольнением из фирмы ты скопировал все логи со всех серверов на флешку и забрал их с собой. Какого было твоё удивление, когда ты насчитал на 1 лог больше, чем количество серверов. Разберитесь в чём дело.
+
+[log.log](ctf.sicamp.ru/static/files/zq8wmxfhzqw/{0}.log)
 '''
 
 def generate(context):
     participant = context['participant']
     token = tokens[participant.id % len(tokens)]
     return TaskStatement(TITLE, STATEMENT_TEMPLATE.format(token))
+    
+tokens = ['PpGLwmLf', 'qXkWfWp1', 'N769A9CQ', 'MQlPFpMO', 'j0smVRAC', 'V0iEcW1N', 'XttzlBmV', 'dmBh8TQL', 'pmOCdriY', 'DSg8VOL9', 'sluqQTVn', 'a6i5caUZ', 'v6xEHPsR', 'xq4fJALv', 'gcU0cEwH', '8jDTMteo', 'Gtwxy9jm', 'P3f6sBaS', '7CxPZMoX', '3KPMh7Hr', 'W82CZw2H', '8VPymI2A', '2mGv0lTU', 'IZzJNmog', 'mwFG6JXu', 'sJRxG7oR', 'UtLj34aF', 'Sd3vEH2k', '150czRIp', 'l0Xl9yAS', 'nlQOcLp6', 'wLh4ONit', 'RQmtJOBZ', 'OXlMasG6', 'lLHMktBS', 'mqDAig8W', 'cUE4X0XT', 'Top8OdMh', 'EiI3DJdO', '3YEztPZx', '68TriKjH', 'rKKmedWI', 'vrrpwVlh', 'fDbMm31r', 'VxmB706l', 'xEgictSs', 'JpOZpLnc', 'wanqV7Qu', '82Yw5MxR', 'LLT4vAVs', 'e9z2LGvz', 'sCr4hLKh', 'ufRGOtRP', '8n6OxhIM', 'iuYKt11j', 'txXlJjsK', '9M9pi65k', 'l740SiOZ', 'ibsWbhLr', 'm01HYb9P', '6pd3bUAN', 'jZetczSI', 'AAY84vmj', 'coh14Zgm', 'sPzSwDVU', 'v19vd56B', 'DkDgiGss', '1AvJD8ne', 'pqh0SJW5', 'NmzpC3wx', 'e4ojjMwn', 'OrpwIH0W', 'lhEsHTi7', 'C4X5L1qv', 'xiuz7ov0', '3cKIjmRA', '8StuHf8v', '1Briz2sp', 'CWggFnUC', 'TmlxeqHL', 'XhUXpLhC', 'M48UjCoR', 'dSzHVHRl', 'XFGfKfm6', 'Hc311fcp', 'UXEvPAB5', 'it99bWAJ', 'AS2rvEUZ', 'X0pWyD0R', 'd8FTxO6w', 'uGSBSr6b', '7bDfecPJ', 'jusX7FUT', 'IsPttcA7', 'ilhDLkTH', 'MFkYj0l3', 'wmYBDHRE', 'OF6I3GwY', 'LnKAyNwI', 'Zmy3HSan', '910gqFMa', 'kWherx1O', 'OjdQDTzV', 'fYmrUDxo', '8WbZMJaY', 'iPb0MXYU', 'yNsB8H3D', 'YHz5W2HV', 'k4oqxqJP', 'vrWULZTu', 'wJNEii8w', 'uuSZIAnY', 'xXaokvPU', 'OPnZyhke', '6V1LPYrF', 'fHVTVr3u', '0Cui0ZGo', 'oKY3OvYi', '1hMvAgaf', 'BSojRviN', 'HMtqRW7S', 'TQgFhpPQ', 'XzlB571b', '1hF4ZaVt', 'raRv1Sx3', 'o7iunrnZ', '1apXssrY', 'y3Yi7Y2m', 'BWrOJ1eQ', 'RVcCVf8I', 'OQ28obGC', 'SOFOTKkE', 'aJojDKdm', 'KHZVF2fd', '5M1ZOkFT', 'QoPi4Xb5', 'JRaFH4xG', '3NfFRTgl', 'ytiQctTf', 'RknbCqRm', 'xl3MieMJ', 'JsX4E1Nc', 'r8FSjqTm', '98EeTZb6', 'vYHHfv8x', 'OigiXJos', 'GV3VLWWj', '5E821wMy', 'LEiC8RP4', 'gQIDv8UG', 'AiQipkQk', 'tABJW7A5', 'lyikoFJm', 'GtPHbyuK', '1EtFNXGY', '9HQwBNJv', '6NqYKi5b', 'rgwaXxjm', '3oW4kNdD', 'WJhk4uG1', 'ltbMBWH6', 'aQiOSUOb', 'gzBVZE3t', '19E1dzDS', 'gxI17nL2', '50yLixlc', 'N1lrIPer', 'Wh3pETJk', 'F7W4UEeb', 'MwYHjUrp', 'W31j7UCF', 'dS8w8mpi', 'euyW0ZG8', '5YL85pNG', 'IEBHjadi', 'uctjXqBW', 'OSUH47Gx', 'HmvzSL3q', 'me5tc1bz', '2d02mRwE', 'uaEkvHZT', 'FzrM66bb', 'h5hyWUg2', 'ocD5KjEX', 'XscUwKkw', 'e8gK973N', 'kxV2iXQ2', 'oeqCr1GS', 'nepG8RXK', 'k5e0zu2T', '46OkVlaG', 'X1OMAZgS', 'G8rFRoPo', 'r2BD2DzP', 'SfN2FcPN', 'NSIz2xy3', '2nV3Wrdr', 'fzHMgS4u', 'uJiCAVxE', 'l4Qi6F9F']

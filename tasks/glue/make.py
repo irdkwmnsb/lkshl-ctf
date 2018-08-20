@@ -33,8 +33,9 @@ if __name__ == "__main__":
     if g.v:
         print(output)
     else:
-        if not os.path.exists(g.where):
-            os.makedirs(g.where)
-        for team_id, flag in output.items():
-            with open(os.path.join(g.where, str(team_id) + ".txt"), 'w', encoding="UTF-8") as f:
-                f.write(str(flag))
+        nd = dict()
+        for team_id, outp in output.items():
+            nd[team_id] = (outp, data[team_id])
+        with open(g.where, 'w+') as f:
+            f.write("data = ")
+            f.write(repr(nd))

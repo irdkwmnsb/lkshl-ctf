@@ -1,6 +1,6 @@
 !Task
-name: Task
-max_score: 0
+name: minecraft
+max_score: 50
 checker: !SimplePyChecker
   source_path: check.py
 statement_generator: !SimplePyStatementGenerator

@@ -1,8 +1,9 @@
-TITLE = "Название задания"
+TITLE = "Шахта ремесло"
 STATEMENT_TEMPLATE = '''
+https://www.youtube.com/watch?v=dANKqxonWsk
+
+[LKLCTF.rar](ctf.sicamp.ru/static/files/LKLCTF.rar)
 '''
 
 def generate(context):
-    participant = context['participant']
-    token = tokens[participant.id % len(tokens)]
-    return TaskStatement(TITLE, STATEMENT_TEMPLATE.format(token))
+    return TaskStatement(TITLE, STATEMENT_TEMPLATE)

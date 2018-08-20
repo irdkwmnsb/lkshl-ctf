@@ -1,8 +1,7 @@
-TITLE = "Название задания"
+TITLE = "Ты и Маргарита"
 STATEMENT_TEMPLATE = '''
+[https://youtube.com/watch?v=3O03uhakcFk](https://youtube.com/watch?v=3O03uhakcFk)
 '''
 
 def generate(context):
-    participant = context['participant']
-    token = tokens[participant.id % len(tokens)]
-    return TaskStatement(TITLE, STATEMENT_TEMPLATE.format(token))
+    return TaskStatement(TITLE, STATEMENT_TEMPLATE)

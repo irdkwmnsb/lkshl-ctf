@@ -1,0 +1,49 @@
+!TaskBasedContest
+name: LKLCTF
+is_visible_in_list: true
+registration_type: Closed
+participation_mode: Individual
+start_time: 2018-08-20 15:00:00+5
+finish_time: 2018-08-20 22:30:00+5
+registration_start_time: null
+registration_finish_time: null
+short_description: ""
+description: ""
+tasks_grouping: One by one
+task_opening_policy: All
+task_set: !TaskSet
+  context: !DirectoryContext
+    directory: /contest_import
+  task_paths:
+  - tasks-deploy/a-plus-b/a-plus-b.yml
+  - tasks-deploy/bassboosted/task.yml
+  - tasks-deploy/blind-robot/task.yml
+  - tasks-deploy/broadcast/task.yml
+  - tasks-deploy/brute-zip/task.yml
+  - tasks-deploy/caesar/task.yml
+  - tasks-deploy/calc-1/task.yml
+  - tasks-deploy/calc-2/task.yml
+  - tasks-deploy/code-lock/task.yml
+  - tasks-deploy/contest.yml
+  - tasks-deploy/empty-website/task.yml
+  - tasks-deploy/glue/task.yml
+  - tasks-deploy/hackers-pc/task.yml
+  - tasks-deploy/hexandxor/task.yml
+  - tasks-deploy/im-hiding/task.yml
+  - tasks-deploy/it-knows/task.yml
+  - tasks-deploy/logo/task.yml
+  - tasks-deploy/minecraft/task.yml
+  - tasks-deploy/new-admin/task.yml
+  - tasks-deploy/nooisee/task.yml
+  - tasks-deploy/printer/task.yml
+  - tasks-deploy/qr/task.yml
+  - tasks-deploy/red-button/task.yml
+  - tasks-deploy/restore-usb/task.yml
+  - tasks-deploy/rsa/task.yml
+  - tasks-deploy/strange-archive/task.yml
+  - tasks-deploy/terminal/task.yml
+  - tasks-deploy/true-reverse/task.yml
+  - tasks-deploy/usbrip/task.yml
+  - tasks-deploy/xortop/task.yml
+  - tasks-deploy/youtube-subtitles/task.yml
+  - tasks-deploy/_template/task.yml

@@ -54,7 +54,10 @@ def save(data) -> None:
     img = data[1]
     img.save(os.path.join(where, str(team) + ".jpg"))
 
+def make_and_save(data) -> None:
+    save(make_pic(data))
 
+from tqdm import tqdm
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Make dem tasks")
     flag_group = parser.add_mutually_exclusive_group(required=True)
@@ -80,7 +83,7 @@ if __name__ == "__main__":
         pool = Pool(5, initializer=initializer, initargs=(g.where))
         if not os.path.exists(g.where):
             os.makedirs(g.where)
-        pool.map(save, pool.map(make_pic, list(data.items())))
+        pool.map(make_and_save, tqdm(list(data.items())))
         exit(0)
 
     elif g.from_file:

@@ -1,4 +1,4 @@
 for d in ./tasks/*/ ; do
 	e=$(basename $d)
-	cp -r ./tasks-deploy/_template ./tasks-deploy/$e
+	git stage ./tasks-deploy/$e
 done

@@ -1,8 +1,15 @@
-TITLE = "Название задания"
+TITLE = "Новый админ"
 STATEMENT_TEMPLATE = '''
+Старого админа уволили и на его место посадили вас.
+Не оставил ли старый админ какого-нибудь послания?
+
+Образ виртуальной машины:
+- [Скачать](ctf.sicamp.ru/static/files/LKLCTF.ova)
+- [Зеркало 1](https://drive.google.com/open?id=1Z3FNpUDGvrNxdGoROfOb4JtrKuLS-zYA)
+- [Зеркало 2](https://cloud.mail.ru/public/5Hxu/G63c9hsCx)
+
+Логин: admin, пароль: ctf
 '''
 
 def generate(context):
-    participant = context['participant']
-    token = tokens[participant.id % len(tokens)]
-    return TaskStatement(TITLE, STATEMENT_TEMPLATE.format(token))
+    return TaskStatement(TITLE, STATEMENT_TEMPLATE)

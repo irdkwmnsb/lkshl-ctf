@@ -1,6 +1,6 @@
 !Task
-name: Task
-max_score: 0
+name: glue
+max_score: 100
 checker: !SimplePyChecker
   source_path: check.py
 statement_generator: !SimplePyStatementGenerator

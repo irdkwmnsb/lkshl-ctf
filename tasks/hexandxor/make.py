@@ -29,14 +29,11 @@ if __name__ == "__main__":
     else:
         from flags_and_teams import data
         for team_id, flag in data.items():
-            output[team_id] = make_task(flag)
+            output[team_id] = (make_task(flag), flag)
 
     if g.v:
         print(output)
     else:
-        for team_id, flag in output.items():
-            with open(g.where, 'w+') as f:
-                f.write("tasks = ")
-                f.write(repr(list(output.values())))
-                f.write("\nanswers = ")
-                f.write(repr(list(output.keys())))
+        with open(g.where, 'w+') as f:
+            f.write("data = ")
+            f.write(repr(output))
