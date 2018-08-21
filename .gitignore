@@ -33,3 +33,5 @@ tasks/it-knows/out/
 *.img
 
 tasks/true-reverse/out/
+
+tasks-deploy/_FILES/

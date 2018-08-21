@@ -1,4 +1,4 @@
-TASK_URL = "http://empty-website.ctf.sicamp.ru"
+TASK_URL = "http://empty-website.ctf.sicamp.ru:8080"
 TITLE = "Пустой сайт?"
 STATEMENT_TEMPLATE = f'''
 Действительно ли на [этом]({TASK_URL}/{{0}}) сайте нет ничего полезного?
